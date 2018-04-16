@@ -5,7 +5,7 @@ namespace erasys\OpenApi\Spec\v3;
 /**
  * Common class for Parameter Object and Header Object.
  */
-abstract class AbstractOaVarObject extends AbstractOaObject
+abstract class AbstractParameter extends AbstractObject
 {
 
   /**
@@ -75,7 +75,7 @@ abstract class AbstractOaVarObject extends AbstractOaObject
    * This field should be the raw array representing the JSON schema or a Reference Object.
    *
    * @see https://swagger.io/specification/#schemaObject
-   * @var OaSchemaObject|OaReferenceObject
+   * @var Schema|Reference
    */
   public $schema;
 
@@ -96,7 +96,7 @@ abstract class AbstractOaVarObject extends AbstractOaObject
    * Furthermore, if referencing a schema which contains an example, the examples value SHALL override the
    * example provided by the schema.
    *
-   * @var OaExampleObject[]|OaReferenceObject[] array<string, OaExampleObject>|array<string, OaReferenceObject>
+   * @var Example[]|Reference[] array<string, Example>|array<string, Reference>
    */
   public $examples;
 
@@ -104,7 +104,7 @@ abstract class AbstractOaVarObject extends AbstractOaObject
    * A map containing the representations for the parameter.
    * The key is the media type and the value describes it. The map MUST only contain one entry.
    *
-   * @var OaMediaTypeObject[] array<string, OaMediaTypeObject>
+   * @var MediaType[] array<string, MediaType>
    */
   public $content;
 }

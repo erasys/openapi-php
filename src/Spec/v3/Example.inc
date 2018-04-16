@@ -7,7 +7,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#exampleObject
  */
-class OaExampleObject extends AbstractOaObject
+class Example extends AbstractObject
 {
 
   /**

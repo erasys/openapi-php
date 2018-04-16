@@ -14,7 +14,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#referenceObject
  */
-class OaReferenceObject extends AbstractOaObject
+class Reference extends AbstractObject
 {
 
   /**

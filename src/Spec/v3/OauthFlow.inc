@@ -7,7 +7,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#oauthFlowObject
  */
-class OaOauthFlowObject
+class OauthFlow
 {
 
   /**

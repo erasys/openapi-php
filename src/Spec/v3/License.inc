@@ -7,7 +7,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#licenseObject
  */
-class OaLicenseObject extends AbstractOaObject
+class License extends AbstractObject
 {
 
   /**

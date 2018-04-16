@@ -7,7 +7,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#requestBodyObject
  */
-class OaRequestBodyObject extends AbstractOaObject
+class RequestBody extends AbstractObject
 {
 
   /**
@@ -23,7 +23,7 @@ class OaRequestBodyObject extends AbstractOaObject
    * For requests that match multiple keys, only the most specific key is applicable. e.g. text/plain overrides text/*
    *
    * @see https://tools.ietf.org/html/rfc7231#appendix-D
-   * @var OaMediaTypeObject[] array<string, OaMediaTypeObject>
+   * @var MediaType[] array<string, MediaType>
    */
   public $content;
 

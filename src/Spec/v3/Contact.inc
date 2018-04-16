@@ -7,7 +7,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#contactObject
  */
-class OaContactObject extends AbstractOaObject
+class Contact extends AbstractObject
 {
 
   /**

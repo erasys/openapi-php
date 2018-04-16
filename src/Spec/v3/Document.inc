@@ -7,7 +7,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/
  */
-class OaDocument extends AbstractOaObject
+class Document extends AbstractObject
 {
 
   const SCHEME_HTTP = 'http';
@@ -61,7 +61,7 @@ class OaDocument extends AbstractOaObject
    * REQUIRED. Provides metadata about the API. The metadata MAY be used by tooling as required.
    *
    *
-   * @var OaInfoObject
+   * @var Info
    */
   public $info;
 
@@ -70,7 +70,7 @@ class OaDocument extends AbstractOaObject
    * If the servers property is not provided, or is an empty array,
    * the default value would be a Server Object with a url value of /.
    *
-   * @var OaServerObject[]
+   * @var Server[]
    */
   public $servers;
 
@@ -90,14 +90,14 @@ class OaDocument extends AbstractOaObject
    * @see https://swagger.io/specification/#pathTemplating
    *
    *
-   * @var OaPathItemObject[] array<string, OaPathObject>
+   * @var PathItem[] array<string, Path>
    */
   public $paths;
 
   /**
    * An element to hold various schemas for the specification.
    *
-   * @var OaComponentsObject
+   * @var Components
    */
   public $components;
 
@@ -121,33 +121,33 @@ class OaDocument extends AbstractOaObject
    * The tags that are not declared MAY be organized randomly or based on the tools' logic.
    * Each tag name in the list MUST be unique.
    *
-   * @var OaTagObject[]
+   * @var Tag[]
    */
   public $tags;
 
   /**
    * Additional external documentation.
    *
-   * @var OaExternalDocumentationObject
+   * @var ExternalDocumentation
    */
   public $externalDocs;
 
   /**
-   * OaSchema constructor.
+   * Schema constructor.
    *
-   * @param OaInfoObject $info
+   * @param Info $info
    */
-  public function __construct(OaInfoObject $info)
+  public function __construct(Info $info)
   {
     $this->info = $info;
   }
 
   /**
-   * @param OaTagObject $tag
+   * @param Tag $tag
    *
    * @return $this
    */
-  public function addTag(OaTagObject $tag): OaDocument
+  public function addTag(Tag $tag): Document
   {
     $this->tags[] = $tag;
     return $this;
@@ -159,7 +159,7 @@ class OaDocument extends AbstractOaObject
    *
    * @return $this
    */
-  public function addSecurityRequirement(string $securitySchemeName, $scopes = []): OaDocument
+  public function addSecurityRequirement(string $securitySchemeName, $scopes = []): Document
   {
     $this->security[] = [$securitySchemeName => $scopes];
     return $this;

@@ -8,7 +8,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#responsesObject
  */
-class OaResponseObject extends AbstractOaObject
+class Response extends AbstractObject
 {
 
   /**
@@ -23,7 +23,7 @@ class OaResponseObject extends AbstractOaObject
    * Maps a header name to its definition. RFC7230 states header names are case insensitive. If a response header is
    * defined with the name "Content-Type", it SHALL be ignored.
    *
-   * @var OaHeaderObject[]|OaReferenceObject[] array<string, OaHeaderObject>|array<string, OaReferenceObject>
+   * @var Header[]|Reference[] array<string, Header>|array<string, Reference>
    */
   public $headers;
 
@@ -33,7 +33,7 @@ class OaResponseObject extends AbstractOaObject
    * text/plain overrides text/*
    *
    * @see https://tools.ietf.org/html/rfc7231#appendix-D
-   * @var OaMediaTypeObject[] array<string, OaMediaTypeObject>
+   * @var MediaType[] array<string, MediaType>
    */
   public $content;
 
@@ -42,7 +42,7 @@ class OaResponseObject extends AbstractOaObject
    * following the naming constraints of the names for Component Objects.
    *
    * @see https://swagger.io/specification/#componentsObject
-   * @var OaLinkObject[]|OaReferenceObject[] array<string, OaLinkObject>|array<string, OaReferenceObject>
+   * @var Link[]|Reference[] array<string, Link>|array<string, Reference>
    */
   public $links;
 }

@@ -7,7 +7,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#encodingObject
  */
-class OaEncodingObject extends AbstractOaObject
+class Encoding extends AbstractObject
 {
 
   /**
@@ -27,7 +27,7 @@ class OaEncodingObject extends AbstractOaObject
    * Content-Type is described separately and SHALL be ignored in this section.
    * This property SHALL be ignored if the request body media type is not a multipart.
    *
-   * @var OaHeaderObject[]|OaReferenceObject[] array<string, OaHeaderObject>|array<string, OaReferenceObject>
+   * @var Header[]|Reference[] array<string, Header>|array<string, Reference>
    */
   public $headers;
 

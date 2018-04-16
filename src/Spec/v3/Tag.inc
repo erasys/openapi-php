@@ -8,7 +8,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#tagObject
  */
-class OaTagObject extends AbstractOaObject
+class Tag extends AbstractObject
 {
 
   /**
@@ -29,12 +29,12 @@ class OaTagObject extends AbstractOaObject
   /**
    * Additional external documentation for this tag.
    *
-   * @var OaExternalDocumentationObject
+   * @var ExternalDocumentation
    */
   public $externalDocs;
 
   /**
-   * OaTag constructor.
+   * Tag constructor.
    *
    * @param string $name
    * @param string|null $description

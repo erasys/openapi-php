@@ -11,7 +11,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#headerObject
  */
-class OaHeaderObject extends AbstractOaVarObject
+class Header extends AbstractParameter
 {
 
   // This class has no additional properties

@@ -11,7 +11,7 @@ namespace erasys\OpenApi\Spec\v3;
  * @see https://tools.ietf.org/html/rfc6749
  * @see https://tools.ietf.org/html/draft-ietf-oauth-discovery-06
  */
-class OaSecuritySchemeObject extends AbstractOaObject
+class SecurityScheme extends AbstractObject
 {
 
   /**
@@ -74,7 +74,7 @@ class OaSecuritySchemeObject extends AbstractOaObject
    *
    * Applies To: oauth2
    *
-   * @var OaOauthFlowsObject
+   * @var OauthFlows
    */
   public $flows;
 

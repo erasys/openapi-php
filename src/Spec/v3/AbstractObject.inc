@@ -9,7 +9,7 @@ use JsonSerializable;
 use LogicException;
 use Symfony\Component\Yaml\Yaml;
 
-abstract class AbstractOaObject implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
+abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
 {
 
   /**
@@ -107,11 +107,11 @@ abstract class AbstractOaObject implements ArrayAccess, Arrayable, Jsonable, Jso
    */
   private function exportValue($value)
   {
-    if ($value instanceof OaRawValue) {
+    if ($value instanceof RawValue) {
       return $value->value;
     }
 
-    if ($value instanceof AbstractOaObject) {
+    if ($value instanceof AbstractObject) {
       return $value->toArray();
     }
 

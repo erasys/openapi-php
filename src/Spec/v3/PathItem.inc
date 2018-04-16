@@ -9,7 +9,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#pathItemObject
  */
-class OaPathItemObject extends AbstractOaObject
+class PathItem extends AbstractObject
 {
 
   /**
@@ -42,63 +42,63 @@ class OaPathItemObject extends AbstractOaObject
   /**
    * A definition of a GET operation on this path.
    *
-   * @var OaOperationObject
+   * @var Operation
    */
   public $get;
 
   /**
    * A definition of a PUT operation on this path.
    *
-   * @var OaOperationObject
+   * @var Operation
    */
   public $put;
 
   /**
    * A definition of a POST operation on this path.
    *
-   * @var OaOperationObject
+   * @var Operation
    */
   public $post;
 
   /**
    * A definition of a DELETE operation on this path.
    *
-   * @var OaOperationObject
+   * @var Operation
    */
   public $delete;
 
   /**
    * A definition of a OPTIONS operation on this path.
    *
-   * @var OaOperationObject
+   * @var Operation
    */
   public $options;
 
   /**
    * A definition of a HEAD operation on this path.
    *
-   * @var OaOperationObject
+   * @var Operation
    */
   public $head;
 
   /**
    * A definition of a PATCH operation on this path.
    *
-   * @var OaOperationObject
+   * @var Operation
    */
   public $patch;
 
   /**
    * A definition of a TRACE operation on this path.
    *
-   * @var OaOperationObject
+   * @var Operation
    */
   public $trace;
 
   /**
    * An alternative server array to service all operations in this path.
    *
-   * @var OaServerObject[]
+   * @var Server[]
    */
   public $servers;
 
@@ -115,7 +115,7 @@ class OaPathItemObject extends AbstractOaObject
    * @see https://swagger.io/specification/#referenceObject
    * @see https://swagger.io/specification/#componentsParameters
    *
-   * @var OaParameterObject[]|OaReferenceObject[]
+   * @var Parameter[]|Reference[]
    */
   public $parameters;
 

@@ -30,7 +30,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#parameterObject
  */
-class OaParameterObject extends AbstractOaVarObject
+class Parameter extends AbstractParameter
 {
 
   const IN_PATH = 'path';

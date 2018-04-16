@@ -12,7 +12,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#discriminatorObject
  */
-class OaDiscriminatorObject extends AbstractOaObject
+class Discriminator extends AbstractObject
 {
 
   /**

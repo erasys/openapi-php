@@ -8,7 +8,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#infoObject
  */
-class OaInfoObject extends AbstractOaObject
+class Info extends AbstractObject
 {
 
   /**
@@ -35,14 +35,14 @@ class OaInfoObject extends AbstractOaObject
   /**
    * (Optional) The contact information for the exposed API.
    *
-   * @var OaContactObject
+   * @var Contact
    */
   public $contact;
 
   /**
    * (Optional) The license information for the exposed API.
    *
-   * @var OaLicenseObject
+   * @var License
    */
   public $license;
 
@@ -70,7 +70,7 @@ class OaInfoObject extends AbstractOaObject
     $this->title = $title;
     $this->version = $version;
     $this->description = $description;
-    $this->license = new OaLicenseObject(
+    $this->license = new License(
       [
         'name' => $licenseName,
       ]

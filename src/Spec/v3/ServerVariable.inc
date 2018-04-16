@@ -7,7 +7,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#serverVariableObject
  */
-class OaServerVariableObject extends AbstractOaObject
+class ServerVariable extends AbstractObject
 {
 
   /**

@@ -19,7 +19,7 @@ namespace erasys\OpenApi\Spec\v3;
  * @see https://tools.ietf.org/html/draft-wright-json-schema-00
  * @see https://tools.ietf.org/html/draft-wright-json-schema-validation-00
  */
-class OaSchemaObject extends AbstractOaObject
+class Schema extends AbstractObject
 {
 
   /**
@@ -54,14 +54,14 @@ class OaSchemaObject extends AbstractOaObject
    * Value MUST be an object and not an array. Inline or referenced schema MUST be of a Schema Object and not a
    * standard JSON Schema. items MUST be present if the type is array.
    *
-   * @var OaSchemaObject|OaReferenceObject
+   * @var Schema|Reference
    */
   public $items;
 
   /**
    * Property definitions MUST be a Schema Object and not a standard JSON Schema (inline or referenced).
    *
-   * @var OaSchemaObject[]|OaReferenceObject[] array<string, OaSchemaObject>|array<string, OaReferenceObject>
+   * @var Schema[]|Reference[] array<string, Schema>|array<string, Reference>
    */
   public $properties;
 
@@ -69,42 +69,42 @@ class OaSchemaObject extends AbstractOaObject
    * Value can be boolean or object. Inline or referenced schema MUST be of a Schema Object and
    * not a standard JSON Schema.
    *
-   * @var bool|OaSchemaObject[]|OaReferenceObject[] bool|array<string, OaSchemaObject>|array<string, OaReferenceObject>
+   * @var bool|Schema[]|Reference[] bool|array<string, Schema>|array<string, Reference>
    */
   public $additionalProperties;
 
   /**
    * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
    *
-   * @var OaSchemaObject[]|OaReferenceObject[]
+   * @var Schema[]|Reference[]
    */
   public $allOf;
 
   /**
    * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
    *
-   * @var OaSchemaObject[]|OaReferenceObject[]
+   * @var Schema[]|Reference[]
    */
   public $oneOf;
 
   /**
    * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
    *
-   * @var OaSchemaObject[]|OaReferenceObject[]
+   * @var Schema[]|Reference[]
    */
   public $anyOf;
 
   /**
    * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
    *
-   * @var OaSchemaObject|OaReferenceObject
+   * @var Schema|Reference
    */
   public $not;
 
   /**
    * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
    *
-   * @var OaSchemaObject[]|OaReferenceObject[]
+   * @var Schema[]|Reference[]
    */
   public $multipleOf;
 
@@ -132,7 +132,7 @@ class OaSchemaObject extends AbstractOaObject
    * In OAS 3.0, a response payload MAY be described to be exactly one of any number of types.
    *
    * @see https://swagger.io/specification/#schemaComposition
-   * @var OaDiscriminatorObject
+   * @var Discriminator
    */
   public $discriminator;
 
@@ -168,7 +168,7 @@ class OaSchemaObject extends AbstractOaObject
   /**
    * Additional external documentation for this schema.
    *
-   * @var OaExternalDocumentationObject
+   * @var ExternalDocumentation
    */
   public $externalDocs;
 

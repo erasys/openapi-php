@@ -8,70 +8,70 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#componentsObject
  */
-class OaComponentsObject extends AbstractOaObject
+class Components extends AbstractObject
 {
 
   /**
    * A map to hold reusable Schema Objects.
    *
-   * @var OaSchemaObject[]|OaReferenceObject[] array<string,OaSchemaObject>|array<string,OaReferenceObject>
+   * @var Schema[]|Reference[] array<string,Schema>|array<string,Reference>
    */
   public $schemas;
 
   /**
    * A map to hold reusable Response Objects.
    *
-   * @var OaResponseObject[]|OaReferenceObject[] array<string,OaResponseObject>|array<string,OaReferenceObject>
+   * @var Response[]|Reference[] array<string,Response>|array<string,Reference>
    */
   public $responses;
 
   /**
    * A map to hold reusable Parameter Objects.
    *
-   * @var OaParameterObject[]|OaReferenceObject[] array<string,OaParameterObject>|array<string,OaReferenceObject>
+   * @var Parameter[]|Reference[] array<string,Parameter>|array<string,Reference>
    */
   public $parameters;
 
   /**
    * A map to hold reusable Example Objects.
    *
-   * @var OaExampleObject[]|OaReferenceObject[] array<string,OaExampleObject>|array<string,OaReferenceObject>
+   * @var Example[]|Reference[] array<string,Example>|array<string,Reference>
    */
   public $examples;
 
   /**
    * A map to hold reusable Request Body Objects.
    *
-   * @var OaRequestBodyObject[]|OaReferenceObject[] array<string,OaRequestBodyObject>|array<string,OaReferenceObject>
+   * @var RequestBody[]|Reference[] array<string,RequestBody>|array<string,Reference>
    */
   public $requestBodies;
 
   /**
    * A map to hold reusable Header Objects.
    *
-   * @var OaHeaderObject[]|OaReferenceObject[] array<string,OaHeaderObject>|array<string,OaReferenceObject>
+   * @var Header[]|Reference[] array<string,Header>|array<string,Reference>
    */
   public $headers;
 
   /**
    * A map to hold reusable Security Scheme Objects.
    *
-   * @var OaSecuritySchemeObject[]|OaReferenceObject[]
-   *      array<string,OaSecuritySchemeObject>|array<string,OaReferenceObject>
+   * @var SecurityScheme[]|Reference[]
+   *      array<string,SecurityScheme>|array<string,Reference>
    */
   public $securitySchemes;
 
   /**
    * A map to hold reusable Link Objects.
    *
-   * @var OaLinkObject[]|OaReferenceObject[] array<string,OaLinkObject>|array<string,OaReferenceObject>
+   * @var Link[]|Reference[] array<string,Link>|array<string,Reference>
    */
   public $links;
 
   /**
    * A map to hold reusable Callback Objects.
    *
-   * @var OaPathItemObject[]|OaReferenceObject[] array<string, OaPathItemObject>|array<string, OaReferenceObject>
+   * @var PathItem[]|Reference[] array<string, PathItem>|array<string, Reference>
    */
   public $callbacks;
 }

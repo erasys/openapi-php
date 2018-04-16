@@ -7,7 +7,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#externalDocumentationObject
  */
-class OaExternalDocumentationObject extends AbstractOaObject
+class ExternalDocumentation extends AbstractObject
 {
 
   /**

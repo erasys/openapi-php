@@ -7,7 +7,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#operationObject
  */
-class OaOperationObject extends AbstractOaObject
+class Operation extends AbstractObject
 {
 
   /**
@@ -35,7 +35,7 @@ class OaOperationObject extends AbstractOaObject
   /**
    * Additional external documentation for this operation.
    *
-   * @var OaExternalDocumentationObject
+   * @var ExternalDocumentation
    */
   public $externalDocs;
 
@@ -63,7 +63,7 @@ class OaOperationObject extends AbstractOaObject
    * @see https://swagger.io/specification/#referenceObject
    * @see https://swagger.io/specification/#componentsParameters
    *
-   * @var OaParameterObject[]|OaReferenceObject[]
+   * @var Parameter[]|Reference[]
    */
   public $parameters;
 
@@ -75,7 +75,7 @@ class OaOperationObject extends AbstractOaObject
    *
    * @see https://tools.ietf.org/html/rfc7231#section-4.3.1
    *
-   * @var OaRequestBodyObject|OaReferenceObject
+   * @var RequestBody|Reference
    */
   public $requestBody;
 
@@ -102,7 +102,7 @@ class OaOperationObject extends AbstractOaObject
    *
    * @see https://swagger.io/specification/#responsesObject
    *
-   * @var OaResponseObject[]|OaReferenceObject[] array<string, OaResponseObject>|array<string, OaReferenceObject>
+   * @var Response[]|Reference[] array<string, Response>|array<string, Reference>
    */
   public $responses;
 
@@ -115,7 +115,7 @@ class OaOperationObject extends AbstractOaObject
    *
    * @see https://swagger.io/specification/#callbackObject
    *
-   * @var OaPathItemObject[]|OaReferenceObject[] array<string, OaPathItemObject>|array<string, OaReferenceObject>
+   * @var PathItem[]|Reference[] array<string, PathItem>|array<string, Reference>
    */
   public $callbacks;
 
@@ -151,7 +151,7 @@ class OaOperationObject extends AbstractOaObject
    * If an alternative server object is specified at the Path Item Object or Root level,
    * it will be overridden by this value.
    *
-   * @var OaServerObject[]
+   * @var Server[]
    */
   public $servers;
 }

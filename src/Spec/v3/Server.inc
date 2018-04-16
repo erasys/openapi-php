@@ -7,7 +7,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#serverObject
  */
-class OaServerObject extends AbstractOaObject
+class Server extends AbstractObject
 {
 
   /**
@@ -31,7 +31,7 @@ class OaServerObject extends AbstractOaObject
   /**
    * A map between a variable name and its value. The value is used for substitution in the server's URL template.
    *
-   * @var OaServerVariableObject[] array<string, OaServerVariableObject>
+   * @var ServerVariable[] array<string, ServerVariable>
    */
   public $variables;
 }

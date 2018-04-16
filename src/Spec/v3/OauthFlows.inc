@@ -7,34 +7,34 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#oauthFlowsObject
  */
-class OaOauthFlowsObject
+class OauthFlows
 {
 
   /**
    * Configuration for the OAuth Implicit flow
    *
-   * @var OaOauthFlowObject
+   * @var OauthFlow
    */
   public $implicit;
 
   /**
    * Configuration for the OAuth Resource Owner Password flow
    *
-   * @var OaOauthFlowObject
+   * @var OauthFlow
    */
   public $password;
 
   /**
    * Configuration for the OAuth Client Credentials flow. Previously called application in OpenAPI 2.0.
    *
-   * @var OaOauthFlowObject
+   * @var OauthFlow
    */
   public $clientCredentials;
 
   /**
    * Configuration for the OAuth Authorization Code flow. Previously called accessCode in OpenAPI 2.0.
    *
-   * @var OaOauthFlowObject
+   * @var OauthFlow
    */
   public $authorizationCode;
 }

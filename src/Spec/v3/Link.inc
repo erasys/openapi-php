@@ -15,7 +15,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#linkObject
  */
-class OaLinkObject extends AbstractOaObject
+class Link extends AbstractObject
 {
 
   /**
@@ -64,7 +64,7 @@ class OaLinkObject extends AbstractOaObject
   /**
    * A server object to be used by the target operation.
    *
-   * @var OaServerObject
+   * @var Server
    */
   public $server;
 }

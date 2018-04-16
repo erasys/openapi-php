@@ -7,7 +7,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#mediaTypeObject
  */
-class OaMediaTypeObject extends AbstractOaObject
+class MediaType extends AbstractObject
 {
 
   /**
@@ -16,7 +16,7 @@ class OaMediaTypeObject extends AbstractOaObject
    * This field should be the raw array representing the JSON schema or a Reference Object.
    *
    * @see https://swagger.io/specification/#schemaObject
-   * @var OaSchemaObject|OaReferenceObject
+   * @var Schema|Reference
    */
   public $schema;
 
@@ -36,7 +36,7 @@ class OaMediaTypeObject extends AbstractOaObject
    * if referencing a schema which contains an example, the examples value SHALL override
    * the example provided by the schema.
    *
-   * @var OaExampleObject[]|OaReferenceObject[] array<string, OaExampleObject>|array<string, OaReferenceObject>
+   * @var Example[]|Reference[] array<string, Example>|array<string, Reference>
    */
   public $examples;
 
@@ -46,7 +46,7 @@ class OaMediaTypeObject extends AbstractOaObject
    * The encoding object SHALL only apply to requestBody objects when the media type
    * is multipart or application/x-www-form-urlencoded.
    *
-   * @var OaEncodingObject[] array<string, OaEncodingObject>
+   * @var Encoding[] array<string, Encoding>
    */
   public $encoding;
 }
