@@ -18,7 +18,7 @@ class Server extends AbstractObject
    *
    * @var string
    */
-  public $url;
+    public $url;
 
   /**
    * An optional string describing the host designated by the URL.
@@ -26,12 +26,12 @@ class Server extends AbstractObject
    *
    * @var string
    */
-  public $description;
+    public $description;
 
   /**
    * A map between a variable name and its value. The value is used for substitution in the server's URL template.
    *
    * @var ServerVariable[] array<string, ServerVariable>
    */
-  public $variables;
+    public $variables;
 }

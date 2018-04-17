@@ -17,7 +17,7 @@ class OauthFlow
    *
    * @var string
    */
-  public $authorizationUrl;
+    public $authorizationUrl;
 
   /**
    * REQUIRED. The token URL to be used for this flow. This MUST be in the form of a URL.
@@ -26,7 +26,7 @@ class OauthFlow
    *
    * @var string
    */
-  public $tokenUrl;
+    public $tokenUrl;
 
   /**
    * The URL to be used for obtaining refresh tokens. This MUST be in the form of a URL.
@@ -35,7 +35,7 @@ class OauthFlow
    *
    * @var string
    */
-  public $refreshUrl;
+    public $refreshUrl;
 
   /**
    * REQUIRED. The available scopes for the OAuth2 security scheme. A map between the scope name and a short
@@ -45,5 +45,5 @@ class OauthFlow
    *
    * @var string[] array<string,string>
    */
-  public $scopes;
+    public $scopes;
 }

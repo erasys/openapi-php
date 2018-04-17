@@ -18,7 +18,7 @@ class MediaType extends AbstractObject
    * @see https://swagger.io/specification/#schemaObject
    * @var Schema|Reference
    */
-  public $schema;
+    public $schema;
 
   /**
    * Example of the media type. The example object SHOULD be in the correct format as specified by the media type.
@@ -28,7 +28,7 @@ class MediaType extends AbstractObject
    *
    * @var string|mixed
    */
-  public $example;
+    public $example;
 
   /**
    * Examples of the media type. Each example object SHOULD match the media type and specified schema if present.
@@ -38,7 +38,7 @@ class MediaType extends AbstractObject
    *
    * @var Example[]|Reference[] array<string, Example>|array<string, Reference>
    */
-  public $examples;
+    public $examples;
 
   /**
    * A map between a property name and its encoding information.
@@ -48,5 +48,5 @@ class MediaType extends AbstractObject
    *
    * @var Encoding[] array<string, Encoding>
    */
-  public $encoding;
+    public $encoding;
 }

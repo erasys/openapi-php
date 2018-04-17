@@ -16,35 +16,35 @@ class Info extends AbstractObject
    *
    * @var string
    */
-  public $title;
+    public $title;
 
   /**
    * (Optional) A short description of the application. CommonMark syntax MAY be used for rich text representation.
    *
    * @var string
    */
-  public $description;
+    public $description;
 
   /**
    * (Optional) A URL to the Terms of Service for the API. MUST be in the format of a URL.
    *
    * @var string
    */
-  public $termsOfService;
+    public $termsOfService;
 
   /**
    * (Optional) The contact information for the exposed API.
    *
    * @var Contact
    */
-  public $contact;
+    public $contact;
 
   /**
    * (Optional) The license information for the exposed API.
    *
    * @var License
    */
-  public $license;
+    public $license;
 
   /**
    * REQUIRED. The version of this OpenAPI document
@@ -53,7 +53,7 @@ class Info extends AbstractObject
    *
    * @var string
    */
-  public $version;
+    public $version;
 
   /**
    * @param string $title
@@ -61,19 +61,19 @@ class Info extends AbstractObject
    * @param string|null $description
    * @param string $licenseName
    */
-  public function __construct(
-    string $title,
-    string $version,
-    string $description = null,
-    string $licenseName = 'Proprietary License'
-  ) {
-    $this->title = $title;
-    $this->version = $version;
-    $this->description = $description;
-    $this->license = new License(
-      [
-        'name' => $licenseName,
-      ]
-    );
-  }
+    public function __construct(
+        string $title,
+        string $version,
+        string $description = null,
+        string $licenseName = 'Proprietary License'
+    ) {
+        $this->title = $title;
+        $this->version = $version;
+        $this->description = $description;
+        $this->license = new License(
+            [
+            'name' => $licenseName,
+            ]
+        );
+    }
 }

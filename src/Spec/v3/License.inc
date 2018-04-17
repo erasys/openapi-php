@@ -16,12 +16,12 @@ class License extends AbstractObject
    *
    * @var string
    */
-  public $name;
+    public $name;
 
   /**
    * A URL to the license used for the API. MUST be in the format of a URL.
    *
    * @var string
    */
-  public $url;
+    public $url;
 }

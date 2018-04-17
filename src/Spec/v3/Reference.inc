@@ -24,14 +24,13 @@ class Reference extends AbstractObject
    *
    * @var string
    */
-  public $ref;
+    public $ref;
 
   /**
    * @param string $ref
    */
-  public function __construct(string $ref)
-  {
-    parent::__construct(['ref' => $ref]);
-  }
-
+    public function __construct(string $ref)
+    {
+        parent::__construct(['ref' => $ref]);
+    }
 }

@@ -33,10 +33,10 @@ namespace erasys\OpenApi\Spec\v3;
 class Parameter extends AbstractParameter
 {
 
-  const IN_PATH = 'path';
-  const IN_QUERY = 'query';
-  const IN_HEADER = 'header';
-  const IN_COOKIE = 'cookie';
+    const IN_PATH = 'path';
+    const IN_QUERY = 'query';
+    const IN_HEADER = 'header';
+    const IN_COOKIE = 'cookie';
 
   /**
    * REQUIRED. The name of the parameter. Parameter names are case sensitive.
@@ -54,7 +54,7 @@ class Parameter extends AbstractParameter
    *
    * @var string
    */
-  public $name;
+    public $name;
 
   /**
    * REQUIRED. The location of the parameter. Possible values are "query", "header", "path" or "cookie".
@@ -62,5 +62,5 @@ class Parameter extends AbstractParameter
    *
    * @var string
    */
-  public $in;
+    public $in;
 }

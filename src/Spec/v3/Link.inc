@@ -25,7 +25,7 @@ class Link extends AbstractObject
    *
    * @var string
    */
-  public $operationRef;
+    public $operationRef;
 
   /**
    * The name of an existing, resolvable OAS operation, as defined with a unique operationId. This field is mutually
@@ -33,7 +33,7 @@ class Link extends AbstractObject
    *
    * @var string
    */
-  public $operationId;
+    public $operationId;
 
   /**
    * A map representing parameters to pass to an operation as specified with operationId or identified via
@@ -44,7 +44,7 @@ class Link extends AbstractObject
    * @see https://swagger.io/specification/#runtimeExpression
    * @var string[] array<string,string>
    */
-  public $parameters;
+    public $parameters;
 
   /**
    * A literal value or {expression} to use as a request body when calling the target operation.
@@ -52,19 +52,19 @@ class Link extends AbstractObject
    * @see https://swagger.io/specification/#runtimeExpression
    * @var string|mixed
    */
-  public $requestBody;
+    public $requestBody;
 
   /**
    * A description of the link. CommonMark syntax MAY be used for rich text representation.
    *
    * @var string
    */
-  public $description;
+    public $description;
 
   /**
    * A server object to be used by the target operation.
    *
    * @var Server
    */
-  public $server;
+    public $server;
 }

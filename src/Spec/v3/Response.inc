@@ -17,7 +17,7 @@ class Response extends AbstractObject
    *
    * @var string
    */
-  public $description;
+    public $description;
 
   /**
    * Maps a header name to its definition. RFC7230 states header names are case insensitive. If a response header is
@@ -25,7 +25,7 @@ class Response extends AbstractObject
    *
    * @var Header[]|Reference[] array<string, Header>|array<string, Reference>
    */
-  public $headers;
+    public $headers;
 
   /**
    * A map containing descriptions of potential response payloads. The key is a media type or media type range and the
@@ -35,7 +35,7 @@ class Response extends AbstractObject
    * @see https://tools.ietf.org/html/rfc7231#appendix-D
    * @var MediaType[] array<string, MediaType>
    */
-  public $content;
+    public $content;
 
   /**
    * A map of operations links that can be followed from the response. The key of the map is a short name for the link,
@@ -44,5 +44,5 @@ class Response extends AbstractObject
    * @see https://swagger.io/specification/#componentsObject
    * @var Link[]|Reference[] array<string, Link>|array<string, Reference>
    */
-  public $links;
+    public $links;
 }

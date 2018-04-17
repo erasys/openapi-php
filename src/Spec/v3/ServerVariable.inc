@@ -15,7 +15,7 @@ class ServerVariable extends AbstractObject
    *
    * @var string[]
    */
-  public $enum;
+    public $enum;
 
   /**
    * REQUIRED. The default value to use for substitution, and to send,
@@ -24,12 +24,12 @@ class ServerVariable extends AbstractObject
    *
    * @var string
    */
-  public $default;
+    public $default;
 
   /**
    * An optional description for the server variable. CommonMark syntax MAY be used for rich text representation.
    *
    * @var string
    */
-  public $description;
+    public $description;
 }

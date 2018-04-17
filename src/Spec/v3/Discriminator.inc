@@ -20,12 +20,12 @@ class Discriminator extends AbstractObject
    *
    * @var string
    */
-  public $propertyName;
+    public $propertyName;
 
   /**
    * An object to hold mappings between payload values and schema names or references.
    *
    * @var string[] array<string, string>
    */
-  public $mapping;
+    public $mapping;
 }

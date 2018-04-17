@@ -14,7 +14,7 @@ abstract class AbstractParameter extends AbstractObject
    *
    * @var string
    */
-  public $description;
+    public $description;
 
   /**
    * Determines whether this parameter is mandatory. If the parameter location is "path",
@@ -23,14 +23,14 @@ abstract class AbstractParameter extends AbstractObject
    *
    * @var bool
    */
-  public $required;
+    public $required;
 
   /**
    * Specifies that a parameter is deprecated and SHOULD be transitioned out of usage.
    *
    * @var bool
    */
-  public $deprecated;
+    public $deprecated;
 
   /**
    * Sets the ability to pass empty-valued parameters.
@@ -40,7 +40,7 @@ abstract class AbstractParameter extends AbstractObject
    *
    * @var bool
    */
-  public $allowEmptyValue;
+    public $allowEmptyValue;
 
   /**
    * Describes how the parameter value will be serialized depending on the type of the parameter value.
@@ -49,7 +49,7 @@ abstract class AbstractParameter extends AbstractObject
    *
    * @var string
    */
-  public $style;
+    public $style;
 
   /**
    * When this is true, parameter values of type array or object generate separate parameters
@@ -58,7 +58,7 @@ abstract class AbstractParameter extends AbstractObject
    *
    * @var bool
    */
-  public $explode;
+    public $explode;
 
   /**
    * Determines whether the parameter value SHOULD allow reserved characters,
@@ -67,7 +67,7 @@ abstract class AbstractParameter extends AbstractObject
    *
    * @var bool
    */
-  public $allowReserved;
+    public $allowReserved;
 
   /**
    * The schema defining the type used for the parameter.
@@ -77,7 +77,7 @@ abstract class AbstractParameter extends AbstractObject
    * @see https://swagger.io/specification/#schemaObject
    * @var Schema|Reference
    */
-  public $schema;
+    public $schema;
 
   /**
    * Example of the media type. The example SHOULD match the specified schema and encoding properties if present.
@@ -88,7 +88,7 @@ abstract class AbstractParameter extends AbstractObject
    *
    * @var string|mixed
    */
-  public $example;
+    public $example;
 
   /**
    * Examples of the media type. Each example SHOULD contain a value in the correct format as
@@ -98,7 +98,7 @@ abstract class AbstractParameter extends AbstractObject
    *
    * @var Example[]|Reference[] array<string, Example>|array<string, Reference>
    */
-  public $examples;
+    public $examples;
 
   /**
    * A map containing the representations for the parameter.
@@ -106,5 +106,5 @@ abstract class AbstractParameter extends AbstractObject
    *
    * @var MediaType[] array<string, MediaType>
    */
-  public $content;
+    public $content;
 }

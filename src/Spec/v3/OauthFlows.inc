@@ -15,26 +15,26 @@ class OauthFlows
    *
    * @var OauthFlow
    */
-  public $implicit;
+    public $implicit;
 
   /**
    * Configuration for the OAuth Resource Owner Password flow
    *
    * @var OauthFlow
    */
-  public $password;
+    public $password;
 
   /**
    * Configuration for the OAuth Client Credentials flow. Previously called application in OpenAPI 2.0.
    *
    * @var OauthFlow
    */
-  public $clientCredentials;
+    public $clientCredentials;
 
   /**
    * Configuration for the OAuth Authorization Code flow. Previously called accessCode in OpenAPI 2.0.
    *
    * @var OauthFlow
    */
-  public $authorizationCode;
+    public $authorizationCode;
 }

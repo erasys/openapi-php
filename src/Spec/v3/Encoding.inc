@@ -20,7 +20,7 @@ class Encoding extends AbstractObject
    *
    * @var string
    */
-  public $contentType;
+    public $contentType;
 
   /**
    * A map allowing additional information to be provided as headers, for example Content-Disposition.
@@ -29,7 +29,7 @@ class Encoding extends AbstractObject
    *
    * @var Header[]|Reference[] array<string, Header>|array<string, Reference>
    */
-  public $headers;
+    public $headers;
 
   /**
    * Describes how a specific property value will be serialized depending on its type.
@@ -40,7 +40,7 @@ class Encoding extends AbstractObject
    * @see https://swagger.io/specification/#parameterObject
    * @var string
    */
-  public $style;
+    public $style;
 
   /**
    * When this is true, property values of type array or object generate separate parameters
@@ -51,7 +51,7 @@ class Encoding extends AbstractObject
    *
    * @var bool
    */
-  public $explode;
+    public $explode;
 
   /**
    * Determines whether the parameter value SHOULD allow reserved characters,
@@ -61,5 +61,5 @@ class Encoding extends AbstractObject
    *
    * @var bool
    */
-  public $allowReserved;
+    public $allowReserved;
 }

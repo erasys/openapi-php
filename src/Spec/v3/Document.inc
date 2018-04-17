@@ -10,42 +10,42 @@ namespace erasys\OpenApi\Spec\v3;
 class Document extends AbstractObject
 {
 
-  const SCHEME_HTTP = 'http';
-  const SCHEME_HTTPS = 'https';
-  const SCHEME_WEBSOCKET = 'ws';
-  const SCHEME_SECURE_WEBSOCKET = 'wss';
-  const MIME_TYPE_JSON = 'application/json';
-  const MIME_TYPE_URLENCODED = 'application/x-www-form-urlencoded';
-  const MIME_TYPE_MULTIPART = 'multipart/form-data';
-  const PARAM_IN_PATH = 'path';
-  const PARAM_IN_QUERY = 'query';
-  const PARAM_IN_HEADER = 'header';
-  const PARAM_IN_COOKIE = 'cookie';
-  const PARAM_STYLE_MATRIX = 'matrix';
-  const PARAM_STYLE_LABEL = 'label';
-  const PARAM_STYLE_FORM = 'form';
-  const PARAM_STYLE_SIMPLE = 'simple';
-  const PARAM_STYLE_SPACE_DELIMITED = 'spaceDelimited';
-  const PARAM_STYLE_PIPE_DELIMITED = 'pipeDelimited';
-  const PARAM_STYLE_DEEP_OBJECT = 'deepObject';
-  const TYPE_STRING = 'string';
-  const TYPE_INTEGER = 'integer';
-  const TYPE_FLOAT = 'number';
-  const TYPE_DOUBLE = 'number';
-  const TYPE_NUMBER = 'number';
-  const TYPE_BOOLEAN = 'boolean';
-  const TYPE_ARRAY = 'array';
-  const TYPE_OBJECT = 'object';
-  const TYPE_NULL = 'null';
-  const TYPE_FORMAT_STRING_INT32 = 'int32';
-  const TYPE_FORMAT_STRING_INT64 = 'int64';
-  const TYPE_FORMAT_STRING_BYTE = 'byte';
-  const TYPE_FORMAT_STRING_BINARY = 'binary';
-  const TYPE_FORMAT_STRING_DATE = 'date';
-  const TYPE_FORMAT_STRING_DATETIME = 'date-time';
-  const TYPE_FORMAT_STRING_PASSWORD = 'password';
-  const TYPE_FORMAT_NUMBER_FLOAT = 'float';
-  const TYPE_FORMAT_NUMBER_DOUBLE = 'double';
+    const SCHEME_HTTP = 'http';
+    const SCHEME_HTTPS = 'https';
+    const SCHEME_WEBSOCKET = 'ws';
+    const SCHEME_SECURE_WEBSOCKET = 'wss';
+    const MIME_TYPE_JSON = 'application/json';
+    const MIME_TYPE_URLENCODED = 'application/x-www-form-urlencoded';
+    const MIME_TYPE_MULTIPART = 'multipart/form-data';
+    const PARAM_IN_PATH = 'path';
+    const PARAM_IN_QUERY = 'query';
+    const PARAM_IN_HEADER = 'header';
+    const PARAM_IN_COOKIE = 'cookie';
+    const PARAM_STYLE_MATRIX = 'matrix';
+    const PARAM_STYLE_LABEL = 'label';
+    const PARAM_STYLE_FORM = 'form';
+    const PARAM_STYLE_SIMPLE = 'simple';
+    const PARAM_STYLE_SPACE_DELIMITED = 'spaceDelimited';
+    const PARAM_STYLE_PIPE_DELIMITED = 'pipeDelimited';
+    const PARAM_STYLE_DEEP_OBJECT = 'deepObject';
+    const TYPE_STRING = 'string';
+    const TYPE_INTEGER = 'integer';
+    const TYPE_FLOAT = 'number';
+    const TYPE_DOUBLE = 'number';
+    const TYPE_NUMBER = 'number';
+    const TYPE_BOOLEAN = 'boolean';
+    const TYPE_ARRAY = 'array';
+    const TYPE_OBJECT = 'object';
+    const TYPE_NULL = 'null';
+    const TYPE_FORMAT_STRING_INT32 = 'int32';
+    const TYPE_FORMAT_STRING_INT64 = 'int64';
+    const TYPE_FORMAT_STRING_BYTE = 'byte';
+    const TYPE_FORMAT_STRING_BINARY = 'binary';
+    const TYPE_FORMAT_STRING_DATE = 'date';
+    const TYPE_FORMAT_STRING_DATETIME = 'date-time';
+    const TYPE_FORMAT_STRING_PASSWORD = 'password';
+    const TYPE_FORMAT_NUMBER_FLOAT = 'float';
+    const TYPE_FORMAT_NUMBER_DOUBLE = 'double';
 
   /**
    * REQUIRED. This string MUST be the semantic version number of the OpenAPI Specification version that the
@@ -55,7 +55,7 @@ class Document extends AbstractObject
    *
    * @var string
    */
-  public $openapi = '3.0.1';
+    public $openapi = '3.0.1';
 
   /**
    * REQUIRED. Provides metadata about the API. The metadata MAY be used by tooling as required.
@@ -63,7 +63,7 @@ class Document extends AbstractObject
    *
    * @var Info
    */
-  public $info;
+    public $info;
 
   /**
    * An array of Server Objects, which provide connectivity information to a target server.
@@ -72,7 +72,7 @@ class Document extends AbstractObject
    *
    * @var Server[]
    */
-  public $servers;
+    public $servers;
 
   /**
    * REQUIRED. The available paths and operations for the API.
@@ -92,14 +92,14 @@ class Document extends AbstractObject
    *
    * @var PathItem[] array<string, Path>
    */
-  public $paths;
+    public $paths;
 
   /**
    * An element to hold various schemas for the specification.
    *
    * @var Components
    */
-  public $components;
+    public $components;
 
   /**
    * A declaration of which security mechanisms can be used across the API.
@@ -112,7 +112,7 @@ class Document extends AbstractObject
    * @see     https://swagger.io/specification/#securityRequirementObject
    * @var string[] array<string, string[]>
    */
-  public $security;
+    public $security;
 
   /**
    * A list of tags used by the specification with additional metadata.
@@ -123,35 +123,35 @@ class Document extends AbstractObject
    *
    * @var Tag[]
    */
-  public $tags;
+    public $tags;
 
   /**
    * Additional external documentation.
    *
    * @var ExternalDocumentation
    */
-  public $externalDocs;
+    public $externalDocs;
 
   /**
    * Schema constructor.
    *
    * @param Info $info
    */
-  public function __construct(Info $info)
-  {
-    $this->info = $info;
-  }
+    public function __construct(Info $info)
+    {
+        $this->info = $info;
+    }
 
   /**
    * @param Tag $tag
    *
    * @return $this
    */
-  public function addTag(Tag $tag): Document
-  {
-    $this->tags[] = $tag;
-    return $this;
-  }
+    public function addTag(Tag $tag): Document
+    {
+        $this->tags[] = $tag;
+        return $this;
+    }
 
   /**
    * @param string $securitySchemeName
@@ -159,9 +159,9 @@ class Document extends AbstractObject
    *
    * @return $this
    */
-  public function addSecurityRequirement(string $securitySchemeName, $scopes = []): Document
-  {
-    $this->security[] = [$securitySchemeName => $scopes];
-    return $this;
-  }
+    public function addSecurityRequirement(string $securitySchemeName, $scopes = []): Document
+    {
+        $this->security[] = [$securitySchemeName => $scopes];
+        return $this;
+    }
 }

@@ -16,7 +16,7 @@ class RequestBody extends AbstractObject
    *
    * @var string
    */
-  public $description;
+    public $description;
 
   /**
    * REQUIRED. The content of the request body. The key is a media type or media type range and the value describes it.
@@ -25,12 +25,12 @@ class RequestBody extends AbstractObject
    * @see https://tools.ietf.org/html/rfc7231#appendix-D
    * @var MediaType[] array<string, MediaType>
    */
-  public $content;
+    public $content;
 
   /**
    * Determines if the request body is required in the request. Defaults to false if not specified.
    *
    * @var bool
    */
-  public $required;
+    public $required;
 }

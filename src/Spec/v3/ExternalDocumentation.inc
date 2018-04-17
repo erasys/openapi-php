@@ -15,12 +15,12 @@ class ExternalDocumentation extends AbstractObject
    *
    * @var string
    */
-  public $description;
+    public $description;
 
   /**
    * REQUIRED. The URL for the target documentation. Value MUST be in the format of a URL.
    *
    * @var string
    */
-  public $url;
+    public $url;
 }

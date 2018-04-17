@@ -17,21 +17,21 @@ class Tag extends AbstractObject
    *
    * @var string
    */
-  public $name;
+    public $name;
 
   /**
    * A short description for the tag. CommonMark syntax MAY be used for rich text representation.
    *
    * @var string
    */
-  public $description;
+    public $description;
 
   /**
    * Additional external documentation for this tag.
    *
    * @var ExternalDocumentation
    */
-  public $externalDocs;
+    public $externalDocs;
 
   /**
    * Tag constructor.
@@ -39,10 +39,9 @@ class Tag extends AbstractObject
    * @param string $name
    * @param string|null $description
    */
-  public function __construct(string $name, string $description = null)
-  {
-    $this->name = $name;
-    $this->description = $description;
-  }
-
+    public function __construct(string $name, string $description = null)
+    {
+        $this->name = $name;
+        $this->description = $description;
+    }
 }

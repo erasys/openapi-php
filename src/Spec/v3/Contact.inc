@@ -15,19 +15,19 @@ class Contact extends AbstractObject
    *
    * @var string
    */
-  public $name;
+    public $name;
 
   /**
    * The URL pointing to the contact information. MUST be in the format of a URL.
    *
    * @var string
    */
-  public $url;
+    public $url;
 
   /**
    * The email address of the contact person/organization. MUST be in the format of an email address.
    *
    * @var string
    */
-  public $email;
+    public $email;
 }

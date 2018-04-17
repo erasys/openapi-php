@@ -25,21 +25,21 @@ class Schema extends AbstractObject
   /**
    * @var string
    */
-  public $title;
+    public $title;
 
   /**
    * CommonMark syntax MAY be used for rich text representation.
    *
    * @var string
    */
-  public $description;
+    public $description;
 
   /**
    * Value MUST be a string. Multiple types via an array are not supported.
    *
    * @var string
    */
-  public $type;
+    public $type;
 
   /**
    * See Data Type Formats for further details. While relying on JSON Schema's defined formats, the OAS offers a few
@@ -48,7 +48,7 @@ class Schema extends AbstractObject
    * @see https://swagger.io/specification/#dataTypeFormat
    * @var string
    */
-  public $format;
+    public $format;
 
   /**
    * Value MUST be an object and not an array. Inline or referenced schema MUST be of a Schema Object and not a
@@ -56,14 +56,14 @@ class Schema extends AbstractObject
    *
    * @var Schema|Reference
    */
-  public $items;
+    public $items;
 
   /**
    * Property definitions MUST be a Schema Object and not a standard JSON Schema (inline or referenced).
    *
    * @var Schema[]|Reference[] array<string, Schema>|array<string, Reference>
    */
-  public $properties;
+    public $properties;
 
   /**
    * Value can be boolean or object. Inline or referenced schema MUST be of a Schema Object and
@@ -71,42 +71,42 @@ class Schema extends AbstractObject
    *
    * @var bool|Schema[]|Reference[] bool|array<string, Schema>|array<string, Reference>
    */
-  public $additionalProperties;
+    public $additionalProperties;
 
   /**
    * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
    *
    * @var Schema[]|Reference[]
    */
-  public $allOf;
+    public $allOf;
 
   /**
    * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
    *
    * @var Schema[]|Reference[]
    */
-  public $oneOf;
+    public $oneOf;
 
   /**
    * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
    *
    * @var Schema[]|Reference[]
    */
-  public $anyOf;
+    public $anyOf;
 
   /**
    * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
    *
    * @var Schema|Reference
    */
-  public $not;
+    public $not;
 
   /**
    * Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
    *
    * @var Schema[]|Reference[]
    */
-  public $multipleOf;
+    public $multipleOf;
 
   /**
    * The default value represents what would be assumed by the consumer of the input as the value of the schema if one
@@ -115,14 +115,14 @@ class Schema extends AbstractObject
    *
    * @var mixed
    */
-  public $default;
+    public $default;
 
   /**
    * Allows sending a null value for the defined schema. Default value is false.
    *
    * @var bool
    */
-  public $nullable;
+    public $nullable;
 
   /**
    * Adds support for polymorphism. The discriminator is an object name that is used to differentiate between other
@@ -134,7 +134,7 @@ class Schema extends AbstractObject
    * @see https://swagger.io/specification/#schemaComposition
    * @var Discriminator
    */
-  public $discriminator;
+    public $discriminator;
 
   /**
    * Relevant only for Schema "properties" definitions. Declares the property as "read only". This means that it MAY be
@@ -144,7 +144,7 @@ class Schema extends AbstractObject
    *
    * @var bool
    */
-  public $readOnly;
+    public $readOnly;
 
   /**
    * Relevant only for Schema "properties" definitions. Declares the property as "write only". Therefore, it MAY be
@@ -154,7 +154,7 @@ class Schema extends AbstractObject
    *
    * @var bool
    */
-  public $writeOnly;
+    public $writeOnly;
 
   /**
    * This MAY be used only on properties schemas. It has no effect on root schemas. Adds additional metadata to
@@ -163,14 +163,14 @@ class Schema extends AbstractObject
    * @see https://swagger.io/specification/#xmlObject
    * @var array
    */
-  public $xml;
+    public $xml;
 
   /**
    * Additional external documentation for this schema.
    *
    * @var ExternalDocumentation
    */
-  public $externalDocs;
+    public $externalDocs;
 
   /**
    * A free-form property to include an example of an instance for this schema. To represent examples that cannot be
@@ -179,76 +179,76 @@ class Schema extends AbstractObject
    *
    * @var mixed
    */
-  public $example;
+    public $example;
 
   /**
    * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
    *
    * @var bool
    */
-  public $deprecated;
+    public $deprecated;
 
   /**
    * @var int
    */
-  public $maximum;
+    public $maximum;
 
   /**
    * @var int
    */
-  public $exclusiveMaximum;
+    public $exclusiveMaximum;
 
   /**
    * @var int
    */
-  public $minimum;
+    public $minimum;
 
   /**
    * @var int
    */
-  public $exclusiveMinimum;
+    public $exclusiveMinimum;
 
   /**
    * @var int
    */
-  public $maxLength;
+    public $maxLength;
 
   /**
    * @var int
    */
-  public $minLength;
+    public $minLength;
 
   /**
    * This string SHOULD be a valid regular expression, according to the ECMA 262 regular expression dialect
    *
    * @var string
    */
-  public $pattern;
+    public $pattern;
 
   /**
    * @var int
    */
-  public $maxItems;
+    public $maxItems;
 
   /**
    * @var int
    */
-  public $minItems;
+    public $minItems;
 
   /**
    * @var bool
    */
-  public $uniqueItems;
+    public $uniqueItems;
 
   /**
    * @var int
    */
-  public $maxProperties;
+    public $maxProperties;
 
   /**
    * @var int
    */
-  public $minProperties;
+    public $minProperties;
 
   /**
    * By default, the properties defined by the properties keyword are not required. However, one can provide a list of
@@ -256,7 +256,7 @@ class Schema extends AbstractObject
    *
    * @var string[]
    */
-  public $required;
+    public $required;
 
   /**
    * The enum keyword is used to restrict a value to a fixed set of values. It must be an array with at least one
@@ -264,5 +264,5 @@ class Schema extends AbstractObject
    *
    * @var mixed[]
    */
-  public $enum;
+    public $enum;
 }

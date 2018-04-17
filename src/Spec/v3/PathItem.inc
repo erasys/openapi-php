@@ -22,14 +22,14 @@ class PathItem extends AbstractObject
    *
    * @var string
    */
-  public $ref;
+    public $ref;
 
   /**
    * An optional, string summary, intended to apply to all operations in this path.
    *
    * @var string
    */
-  public $summary;
+    public $summary;
 
   /**
    * An optional, string description, intended to apply to all operations in this path.
@@ -37,70 +37,70 @@ class PathItem extends AbstractObject
    *
    * @var string
    */
-  public $description;
+    public $description;
 
   /**
    * A definition of a GET operation on this path.
    *
    * @var Operation
    */
-  public $get;
+    public $get;
 
   /**
    * A definition of a PUT operation on this path.
    *
    * @var Operation
    */
-  public $put;
+    public $put;
 
   /**
    * A definition of a POST operation on this path.
    *
    * @var Operation
    */
-  public $post;
+    public $post;
 
   /**
    * A definition of a DELETE operation on this path.
    *
    * @var Operation
    */
-  public $delete;
+    public $delete;
 
   /**
    * A definition of a OPTIONS operation on this path.
    *
    * @var Operation
    */
-  public $options;
+    public $options;
 
   /**
    * A definition of a HEAD operation on this path.
    *
    * @var Operation
    */
-  public $head;
+    public $head;
 
   /**
    * A definition of a PATCH operation on this path.
    *
    * @var Operation
    */
-  public $patch;
+    public $patch;
 
   /**
    * A definition of a TRACE operation on this path.
    *
    * @var Operation
    */
-  public $trace;
+    public $trace;
 
   /**
    * An alternative server array to service all operations in this path.
    *
    * @var Server[]
    */
-  public $servers;
+    public $servers;
 
   /**
    * A list of parameters that are applicable for all the operations described under this path.
@@ -117,6 +117,5 @@ class PathItem extends AbstractObject
    *
    * @var Parameter[]|Reference[]
    */
-  public $parameters;
-
+    public $parameters;
 }

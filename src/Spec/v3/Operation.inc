@@ -16,28 +16,28 @@ class Operation extends AbstractObject
    *
    * @var string[]
    */
-  public $tags;
+    public $tags;
 
   /**
    * A short summary of what the operation does.
    *
    * @var string
    */
-  public $summary;
+    public $summary;
 
   /**
    * A verbose explanation of the operation behavior. CommonMark syntax MAY be used for rich text representation.
    *
    * @var string
    */
-  public $description;
+    public $description;
 
   /**
    * Additional external documentation for this operation.
    *
    * @var ExternalDocumentation
    */
-  public $externalDocs;
+    public $externalDocs;
 
   /**
    * Unique string used to identify the operation.
@@ -48,7 +48,7 @@ class Operation extends AbstractObject
    *
    * @var string
    */
-  public $operationId;
+    public $operationId;
 
   /**
    * A list of parameters that are applicable for this operation.
@@ -65,7 +65,7 @@ class Operation extends AbstractObject
    *
    * @var Parameter[]|Reference[]
    */
-  public $parameters;
+    public $parameters;
 
   /**
    * The request body applicable for this operation.
@@ -77,7 +77,7 @@ class Operation extends AbstractObject
    *
    * @var RequestBody|Reference
    */
-  public $requestBody;
+    public $requestBody;
 
   /**
    * REQUIRED. The list of possible responses as they are returned from executing this operation.
@@ -104,7 +104,7 @@ class Operation extends AbstractObject
    *
    * @var Response[]|Reference[] array<string, Response>|array<string, Reference>
    */
-  public $responses;
+    public $responses;
 
   /**
    * A map of possible out-of band callbacks (aka. web hooks) related to the parent operation.
@@ -117,7 +117,7 @@ class Operation extends AbstractObject
    *
    * @var PathItem[]|Reference[] array<string, PathItem>|array<string, Reference>
    */
-  public $callbacks;
+    public $callbacks;
 
   /**
    * Declares this operation to be deprecated.
@@ -125,7 +125,7 @@ class Operation extends AbstractObject
    *
    * @var bool
    */
-  public $deprecated;
+    public $deprecated;
 
   /**
    * A declaration of which security mechanisms can be used for this operation.
@@ -144,7 +144,7 @@ class Operation extends AbstractObject
    * @see     https://swagger.io/specification/#securityRequirementObject
    * @var string[] array<string, string[]>
    */
-  public $security;
+    public $security;
 
   /**
    * An alternative server array to service this operation.
@@ -153,5 +153,5 @@ class Operation extends AbstractObject
    *
    * @var Server[]
    */
-  public $servers;
+    public $servers;
 }

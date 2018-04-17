@@ -15,14 +15,14 @@ class Example extends AbstractObject
    *
    * @var string
    */
-  public $summary;
+    public $summary;
 
   /**
    * Long description for the example. CommonMark syntax MAY be used for rich text representation.
    *
    * @var string
    */
-  public $description;
+    public $description;
 
   /**
    * Embedded literal example. The value field and externalValue field are mutually exclusive.
@@ -31,7 +31,7 @@ class Example extends AbstractObject
    *
    * @var string|mixed
    */
-  public $value;
+    public $value;
 
   /**
    * A URL that points to the literal example.
@@ -40,5 +40,5 @@ class Example extends AbstractObject
    *
    * @var string
    */
-  public $externalValue;
+    public $externalValue;
 }
