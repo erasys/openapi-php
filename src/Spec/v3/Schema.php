@@ -161,7 +161,7 @@ class Schema extends AbstractObject
    * describe the XML representation of this property.
    *
    * @see https://swagger.io/specification/#xmlObject
-   * @var array
+   * @var Xml
    */
     public $xml;
 
