@@ -11,14 +11,14 @@ namespace erasys\OpenApi\Spec\v3;
 class RawValue
 {
 
-  /**
-   * @var mixed
-   */
+    /**
+     * @var mixed
+     */
     public $value;
 
-  /**
-   * @param mixed $value
-   */
+    /**
+     * @param mixed $value
+     */
     public function __construct($value)
     {
         $this->value = $value;

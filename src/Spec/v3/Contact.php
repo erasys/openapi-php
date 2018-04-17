@@ -10,24 +10,24 @@ namespace erasys\OpenApi\Spec\v3;
 class Contact extends AbstractObject
 {
 
-  /**
-   * The identifying name of the contact person/organization.
-   *
-   * @var string
-   */
+    /**
+     * The identifying name of the contact person/organization.
+     *
+     * @var string
+     */
     public $name;
 
-  /**
-   * The URL pointing to the contact information. MUST be in the format of a URL.
-   *
-   * @var string
-   */
+    /**
+     * The URL pointing to the contact information. MUST be in the format of a URL.
+     *
+     * @var string
+     */
     public $url;
 
-  /**
-   * The email address of the contact person/organization. MUST be in the format of an email address.
-   *
-   * @var string
-   */
+    /**
+     * The email address of the contact person/organization. MUST be in the format of an email address.
+     *
+     * @var string
+     */
     public $email;
 }

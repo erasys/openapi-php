@@ -15,17 +15,17 @@ namespace erasys\OpenApi\Spec\v3;
 class Discriminator extends AbstractObject
 {
 
-  /**
-   * REQUIRED. The name of the property in the payload that will hold the discriminator value.
-   *
-   * @var string
-   */
+    /**
+     * REQUIRED. The name of the property in the payload that will hold the discriminator value.
+     *
+     * @var string
+     */
     public $propertyName;
 
-  /**
-   * An object to hold mappings between payload values and schema names or references.
-   *
-   * @var string[] array<string, string>
-   */
+    /**
+     * An object to hold mappings between payload values and schema names or references.
+     *
+     * @var string[] array<string, string>
+     */
     public $mapping;
 }

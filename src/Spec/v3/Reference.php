@@ -17,18 +17,18 @@ namespace erasys\OpenApi\Spec\v3;
 class Reference extends AbstractObject
 {
 
-  /**
-   * REQUIRED. The reference string.
-   *
-   * This property SHOULD be renamed to '$ref' when exported.
-   *
-   * @var string
-   */
+    /**
+     * REQUIRED. The reference string.
+     *
+     * This property SHOULD be renamed to '$ref' when exported.
+     *
+     * @var string
+     */
     public $ref;
 
-  /**
-   * @param string $ref
-   */
+    /**
+     * @param string $ref
+     */
     public function __construct(string $ref)
     {
         parent::__construct(['ref' => $ref]);

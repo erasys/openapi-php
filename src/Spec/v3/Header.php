@@ -14,5 +14,5 @@ namespace erasys\OpenApi\Spec\v3;
 class Header extends AbstractParameter
 {
 
-  // This class has no additional properties
+    // This class has no additional properties
 }

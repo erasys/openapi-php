@@ -11,56 +11,56 @@ namespace erasys\OpenApi\Spec\v3;
 class Info extends AbstractObject
 {
 
-  /**
-   * REQUIRED. The title of the application.
-   *
-   * @var string
-   */
+    /**
+     * REQUIRED. The title of the application.
+     *
+     * @var string
+     */
     public $title;
 
-  /**
-   * (Optional) A short description of the application. CommonMark syntax MAY be used for rich text representation.
-   *
-   * @var string
-   */
+    /**
+     * (Optional) A short description of the application. CommonMark syntax MAY be used for rich text representation.
+     *
+     * @var string
+     */
     public $description;
 
-  /**
-   * (Optional) A URL to the Terms of Service for the API. MUST be in the format of a URL.
-   *
-   * @var string
-   */
+    /**
+     * (Optional) A URL to the Terms of Service for the API. MUST be in the format of a URL.
+     *
+     * @var string
+     */
     public $termsOfService;
 
-  /**
-   * (Optional) The contact information for the exposed API.
-   *
-   * @var Contact
-   */
+    /**
+     * (Optional) The contact information for the exposed API.
+     *
+     * @var Contact
+     */
     public $contact;
 
-  /**
-   * (Optional) The license information for the exposed API.
-   *
-   * @var License
-   */
+    /**
+     * (Optional) The license information for the exposed API.
+     *
+     * @var License
+     */
     public $license;
 
-  /**
-   * REQUIRED. The version of this OpenAPI document
-   * (which is distinct from the OpenAPI Specification version or the API implementation version).
-   *
-   *
-   * @var string
-   */
+    /**
+     * REQUIRED. The version of this OpenAPI document
+     * (which is distinct from the OpenAPI Specification version or the API implementation version).
+     *
+     *
+     * @var string
+     */
     public $version;
 
-  /**
-   * @param string $title
-   * @param string $version
-   * @param string|null $description
-   * @param string $licenseName
-   */
+    /**
+     * @param string      $title
+     * @param string      $version
+     * @param string|null $description
+     * @param string      $licenseName
+     */
     public function __construct(
         string $title,
         string $version,
@@ -72,7 +72,7 @@ class Info extends AbstractObject
         $this->description = $description;
         $this->license = new License(
             [
-            'name' => $licenseName,
+                'name' => $licenseName,
             ]
         );
     }

@@ -38,29 +38,29 @@ class Parameter extends AbstractParameter
     const IN_HEADER = 'header';
     const IN_COOKIE = 'cookie';
 
-  /**
-   * REQUIRED. The name of the parameter. Parameter names are case sensitive.
-   *
-   * - If in is "path", the name field MUST correspond to the associated path segment from the path field in the Paths
-   * Object. See Path Templating for further information.
-   *
-   * - If in is "header" and the name field is "Accept",
-   * "Content-Type" or "Authorization", the parameter definition SHALL be ignored.
-   *
-   * - For all other cases, the name corresponds to the parameter name used by the in property.
-   *
-   * @see https://swagger.io/specification/#pathTemplating
-   *
-   *
-   * @var string
-   */
+    /**
+     * REQUIRED. The name of the parameter. Parameter names are case sensitive.
+     *
+     * - If in is "path", the name field MUST correspond to the associated path segment from the path field in the Paths
+     * Object. See Path Templating for further information.
+     *
+     * - If in is "header" and the name field is "Accept",
+     * "Content-Type" or "Authorization", the parameter definition SHALL be ignored.
+     *
+     * - For all other cases, the name corresponds to the parameter name used by the in property.
+     *
+     * @see https://swagger.io/specification/#pathTemplating
+     *
+     *
+     * @var string
+     */
     public $name;
 
-  /**
-   * REQUIRED. The location of the parameter. Possible values are "query", "header", "path" or "cookie".
-   *
-   *
-   * @var string
-   */
+    /**
+     * REQUIRED. The location of the parameter. Possible values are "query", "header", "path" or "cookie".
+     *
+     *
+     * @var string
+     */
     public $in;
 }
