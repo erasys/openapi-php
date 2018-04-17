@@ -40,18 +40,24 @@ $ git clone https://github.com/erasys/openapi-php.git
 
 ## Usage
 
+Basic example:
+
 ```php
 <?php
 
 use erasys\OpenApi\Spec\v3 as OASv3;
 
 $spec = new OASv3\Document(
-    new OASv3\Info('My API', '1.0.0', '[description]', '[license]')
+    new OASv3\Info('My API', '1.0.0', 'My API description', 'My License')
 );
 
-$spec->security = [
-    ['api_key' => []]
+$rootPath = new OASv3\PathItem();
+$rootPath->get = new OASv3\Operation();
+$rootPath->get->responses = [
+    '200' => new OASv3\Response(['description' => 'successful response'])
 ];
+
+$spec->paths = ['/' => $rootPath];
 
 $yaml = $spec->toYaml();
 $json = $spec->toJson();
