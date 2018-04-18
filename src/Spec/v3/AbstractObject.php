@@ -8,11 +8,19 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
 use JsonSerializable;
 use LogicException;
+use stdClass;
 use Symfony\Component\Yaml\Yaml;
 
+/**
+ * Base class for all Open API models.
+ *
+ * Note that defining or accessing properties dynamically is not supported by design
+ * to avoid invalid schema generation. If you need to use specification extensions,
+ * you can always extend the classes and add there your own properties.
+ *
+ */
 abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
 {
-
     /**
      * @param array $properties
      */
@@ -151,6 +159,16 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
     public function toJson($options = 0)
     {
         return json_encode($this, $options);
+    }
+
+    /**
+     * Returns a plain object
+     *
+     * @return object|stdClass
+     */
+    public function toObject(): stdClass
+    {
+        return json_decode($this->toJson());
     }
 
     /**

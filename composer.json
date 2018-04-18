@@ -1,7 +1,7 @@
 {
   "name": "erasys/openapi-php",
   "type": "library",
-  "description": "Open API 3.0 spec generator for PHP.",
+  "description": "Open API 3.0 builder and validation library for PHP that helps you write valid specs.",
   "keywords": [
     "openapi",
     "openapi3",
@@ -27,7 +27,8 @@
   "require": {
     "php": "^7.0",
     "illuminate/contracts": "^5.4",
-    "symfony/yaml": "^3.4"
+    "symfony/yaml": "^3.4",
+    "justinrainbow/json-schema": "^5.2"
   },
   "require-dev": {
     "phpunit/phpunit": "^6.5",

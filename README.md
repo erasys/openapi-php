@@ -5,7 +5,7 @@
 [![Build Status][ico-travis]][link-travis]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-Open API 3.0 spec generator for PHP.
+Open API 3.0 builder and validation library for PHP that helps you write valid specs.
 
 [PSR-1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
 [PSR-2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
@@ -17,11 +17,13 @@ If you notice compliance oversights, please send a patch via pull request.
 
 ## Features
 
-- Object-oriented representation of the 
-[Open API 3.0+](https://github.com/OAI/OpenAPI-Specification/tree/master/versions) specification.
+- Fully documented object-oriented representation of the 
+[Open API 3.0+](https://github.com/OAI/OpenAPI-Specification/tree/master/versions) specification with helper methods
+to write valid documents.
 - Supports Illuminate (Laravel) [`Jsonable`](https://github.com/illuminate/contracts/blob/v5.4.0/Support/Jsonable.php) 
 and [`Arrayable`](https://github.com/illuminate/contracts/blob/v5.4.0/Support/Arrayable.php).
-- Generates an specification in plain PHP arrays, JSON or YAML.
+- Generates an specification in plain PHP arrays, plain objects, JSON or YAML.
+- Validates Open API documents against the Open API 3.0.x JSON Schema.
 
 
 ## Install
