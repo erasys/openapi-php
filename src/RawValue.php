@@ -1,6 +1,6 @@
 <?php
 
-namespace erasys\OpenApi\Spec\v3;
+namespace erasys\OpenApi;
 
 /**
  * Represents a raw value.

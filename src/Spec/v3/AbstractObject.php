@@ -3,6 +3,7 @@
 namespace erasys\OpenApi\Spec\v3;
 
 use ArrayAccess;
+use erasys\OpenApi\RawValue;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
 use JsonSerializable;
