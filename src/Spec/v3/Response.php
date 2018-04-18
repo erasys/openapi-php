@@ -43,4 +43,22 @@ class Response extends AbstractObject implements ExtensibleInterface
      * @var Link[]|Reference[] array<string, Link>|array<string, Reference>
      */
     public $links;
+
+    /**
+     * @param string                    $description
+     * @param MediaType[]|null          $content
+     * @param Header[]|Reference[]|null $headers
+     * @param array                     $additionalProperties
+     */
+    public function __construct(
+        string $description,
+        array $content = null,
+        array $headers = null,
+        array $additionalProperties = []
+    ) {
+        parent::__construct($additionalProperties);
+        $this->description = $description;
+        $this->content     = $content;
+        $this->headers     = $headers;
+    }
 }

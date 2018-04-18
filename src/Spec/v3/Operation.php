@@ -7,8 +7,34 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#operationObject
  */
-class Operation extends AbstractObject
+class Operation extends AbstractObject implements ExtensibleInterface
 {
+    /**
+     * REQUIRED. The list of possible responses as they are returned from executing this operation.
+     *
+     * Map between the response HTTP status code (as a string) and the definition object.
+     *
+     * The documentation is not necessarily expected to cover all possible HTTP response codes because they may not be
+     * known in advance. However, documentation is expected to cover a successful operation response and any known
+     * errors. The "default" code MAY be used as a default response object for all HTTP codes that are not covered
+     * individually by the specification.
+     *
+     * The Responses Object MUST contain at least one response code, and it SHOULD be the response for a successful
+     * operation call.
+     *
+     * Any HTTP status code can be used as the property name, but only one property per code, to describe the
+     * expected response for that HTTP status code. A Reference Object can link to a response that is defined in the
+     * OpenAPI Object's components/responses section. This field MUST be enclosed in quotation marks (for example,
+     * "200") for compatibility between JSON and YAML. To define a range of response codes, this field MAY contain the
+     * uppercase wildcard character X. For example, 2XX represents all response codes between [200-299]. The following
+     * range definitions are allowed: 1XX, 2XX, 3XX, 4XX, and 5XX. If a response range is defined using an explicit
+     * code, the explicit code definition takes precedence over the range definition for that code.
+     *
+     * @see https://swagger.io/specification/#responsesObject
+     *
+     * @var Response[]|Reference[] array<string, Response>|array<string, Reference>
+     */
+    public $responses;
 
     /**
      * A list of tags for API documentation control.
@@ -80,33 +106,6 @@ class Operation extends AbstractObject
     public $requestBody;
 
     /**
-     * REQUIRED. The list of possible responses as they are returned from executing this operation.
-     *
-     * Map between the response HTTP status code (as a string) and the definition object.
-     *
-     * The documentation is not necessarily expected to cover all possible HTTP response codes because they may not be
-     * known in advance. However, documentation is expected to cover a successful operation response and any known
-     * errors. The "default" code MAY be used as a default response object for all HTTP codes that are not covered
-     * individually by the specification.
-     *
-     * The Responses Object MUST contain at least one response code, and it SHOULD be the response for a successful
-     * operation call.
-     *
-     * Any HTTP status code can be used as the property name, but only one property per code, to describe the
-     * expected response for that HTTP status code. A Reference Object can link to a response that is defined in the
-     * OpenAPI Object's components/responses section. This field MUST be enclosed in quotation marks (for example,
-     * "200") for compatibility between JSON and YAML. To define a range of response codes, this field MAY contain the
-     * uppercase wildcard character X. For example, 2XX represents all response codes between [200-299]. The following
-     * range definitions are allowed: 1XX, 2XX, 3XX, 4XX, and 5XX. If a response range is defined using an explicit
-     * code, the explicit code definition takes precedence over the range definition for that code.
-     *
-     * @see https://swagger.io/specification/#responsesObject
-     *
-     * @var Response[]|Reference[] array<string, Response>|array<string, Reference>
-     */
-    public $responses;
-
-    /**
      * A map of possible out-of band callbacks (aka. web hooks) related to the parent operation.
      * The key is a unique identifier for the Callback Object.
      * Each value in the map is a Callback Object that describes a request that may be initiated by
@@ -154,4 +153,22 @@ class Operation extends AbstractObject
      * @var Server[]
      */
     public $servers;
+
+    /**
+     * @param Response[]|Reference[] $responses
+     * @param string|null            $operationId
+     * @param string|null            $summary
+     * @param array                  $additionalProperties
+     */
+    public function __construct(
+        array $responses,
+        string $operationId = null,
+        string $summary = null,
+        array $additionalProperties = []
+    ) {
+        parent::__construct($additionalProperties);
+        $this->responses   = $responses;
+        $this->operationId = $operationId;
+        $this->summary     = $summary;
+    }
 }

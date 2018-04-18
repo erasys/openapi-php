@@ -85,4 +85,16 @@ class SecurityScheme extends AbstractObject implements ExtensibleInterface
      * @var string
      */
     public $openIdConnectUrl;
+
+    /**
+     * @param string      $type
+     * @param string|null $description
+     * @param array       $additionalProperties
+     */
+    public function __construct(string $type, string $description = null, array $additionalProperties = [])
+    {
+        parent::__construct($additionalProperties);
+        $this->type        = $type;
+        $this->description = $description;
+    }
 }

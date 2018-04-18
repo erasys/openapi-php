@@ -36,12 +36,20 @@ class Tag extends AbstractObject implements ExtensibleInterface
     /**
      * Tag constructor.
      *
-     * @param string      $name
-     * @param string|null $description
+     * @param string                     $name
+     * @param string|null                $description
+     * @param ExternalDocumentation|null $externalDocs
+     * @param array                      $additionalProperties
      */
-    public function __construct(string $name, string $description = null)
-    {
-        $this->name = $name;
-        $this->description = $description;
+    public function __construct(
+        string $name,
+        string $description = null,
+        ExternalDocumentation $externalDocs = null,
+        array $additionalProperties = []
+    ) {
+        parent::__construct($additionalProperties);
+        $this->name         = $name;
+        $this->description  = $description;
+        $this->externalDocs = $externalDocs;
     }
 }

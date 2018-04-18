@@ -33,4 +33,22 @@ class Server extends AbstractObject implements ExtensibleInterface
      * @var ServerVariable[] array<string, ServerVariable>
      */
     public $variables;
+
+    /**
+     * @param string      $url
+     * @param string|null $description
+     * @param array|null  $variables
+     * @param array       $additionalProperties
+     */
+    public function __construct(
+        string $url,
+        string $description = null,
+        array $variables = null,
+        array $additionalProperties = []
+    ) {
+        parent::__construct($additionalProperties);
+        $this->url         = $url;
+        $this->description = $description;
+        $this->variables   = $variables;
+    }
 }

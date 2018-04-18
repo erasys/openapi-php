@@ -14,7 +14,6 @@ namespace erasys\OpenApi\Spec\v3;
  */
 class Discriminator extends AbstractObject
 {
-
     /**
      * REQUIRED. The name of the property in the payload that will hold the discriminator value.
      *
@@ -28,4 +27,15 @@ class Discriminator extends AbstractObject
      * @var string[] array<string, string>
      */
     public $mapping;
+
+    /**
+     * @param string   $propertyName
+     * @param string[] $mapping
+     */
+    public function __construct(string $propertyName, array $mapping = null)
+    {
+        parent::__construct([]);
+        $this->propertyName = $propertyName;
+        $this->mapping      = $mapping;
+    }
 }

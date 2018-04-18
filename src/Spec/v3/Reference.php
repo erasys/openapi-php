@@ -16,7 +16,6 @@ namespace erasys\OpenApi\Spec\v3;
  */
 class Reference extends AbstractObject
 {
-
     /**
      * REQUIRED. The reference string.
      *
@@ -31,6 +30,7 @@ class Reference extends AbstractObject
      */
     public function __construct(string $ref)
     {
-        parent::__construct(['ref' => $ref]);
+        parent::__construct([]);
+        $this->ref = $ref;
     }
 }

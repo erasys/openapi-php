@@ -66,15 +66,6 @@ class Document extends AbstractObject implements ExtensibleInterface
     public $info;
 
     /**
-     * An array of Server Objects, which provide connectivity information to a target server.
-     * If the servers property is not provided, or is an empty array,
-     * the default value would be a Server Object with a url value of /.
-     *
-     * @var Server[]
-     */
-    public $servers;
-
-    /**
      * REQUIRED. The available paths and operations for the API.
      * A map between a path and its definition.
      *
@@ -93,6 +84,15 @@ class Document extends AbstractObject implements ExtensibleInterface
      * @var PathItem[] array<string, Path>
      */
     public $paths;
+
+    /**
+     * An array of Server Objects, which provide connectivity information to a target server.
+     * If the servers property is not provided, or is an empty array,
+     * the default value would be a Server Object with a url value of /.
+     *
+     * @var Server[]
+     */
+    public $servers;
 
     /**
      * An element to hold various schemas for the specification.
@@ -133,13 +133,18 @@ class Document extends AbstractObject implements ExtensibleInterface
     public $externalDocs;
 
     /**
-     * Schema constructor.
-     *
-     * @param Info $info
+     * @param Info       $info
+     * @param PathItem[] $paths
+     * @param string     $openapi
+     * @param array      $additionalProperties
      */
-    public function __construct(Info $info)
+    public function __construct(Info $info, array $paths, string $openapi = '3.0.1', array $additionalProperties = [])
     {
-        $this->info = $info;
+        $this->info    = $info;
+        $this->paths   = $paths;
+        $this->openapi = $openapi;
+
+        parent::__construct($additionalProperties);
     }
 
     /**

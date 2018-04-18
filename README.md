@@ -49,21 +49,25 @@ Basic example:
 
 use erasys\OpenApi\Spec\v3 as OASv3;
 
-$spec = new OASv3\Document(
-    new OASv3\Info('My API', '1.0.0', 'My API description', 'My License')
+$doc = new OASv3\Document(
+    new OASv3\Info('My API', '1.0.0', 'My API description'),
+    [
+        '/foo/bar' => new OASv3\PathItem(
+            [
+                'get' => new OASv3\Operation(
+                    [
+                        '200' => new OASv3\Response('Successful response.'),
+                        'default' => new OASv3\Response('Default error response.'),
+                    ]
+                ),
+            ]
+        ),
+    ]
 );
 
-$rootPath = new OASv3\PathItem();
-$rootPath->get = new OASv3\Operation();
-$rootPath->get->responses = [
-    '200' => new OASv3\Response(['description' => 'successful response'])
-];
-
-$spec->paths = ['/' => $rootPath];
-
-$yaml = $spec->toYaml();
-$json = $spec->toJson();
-$arr  = $spec->toArray();
+$yaml = $doc->toYaml();
+$json = $doc->toJson();
+$arr  = $doc->toArray();
 
 ```
 

@@ -7,16 +7,8 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#serverVariableObject
  */
-class ServerVariable extends AbstractObject
+class ServerVariable extends AbstractObject implements ExtensibleInterface
 {
-
-    /**
-     * An enumeration of string values to be used if the substitution options are from a limited set.
-     *
-     * @var string[]
-     */
-    public $enum;
-
     /**
      * REQUIRED. The default value to use for substitution, and to send,
      * if an alternate value is not supplied. Unlike the Schema Object's default,
@@ -32,4 +24,29 @@ class ServerVariable extends AbstractObject
      * @var string
      */
     public $description;
+
+    /**
+     * An enumeration of string values to be used if the substitution options are from a limited set.
+     *
+     * @var string[]
+     */
+    public $enum;
+
+    /**
+     * @param string   $default
+     * @param string   $description
+     * @param string[] $enum
+     * @param array    $additionalProperties
+     */
+    public function __construct(
+        string $default,
+        string $description = null,
+        array $enum = null,
+        array $additionalProperties = []
+    ) {
+        parent::__construct($additionalProperties);
+        $this->default     = $default;
+        $this->description = $description;
+        $this->enum        = $enum;
+    }
 }

@@ -13,6 +13,13 @@ namespace erasys\OpenApi\Spec\v3;
  */
 class Header extends AbstractParameter
 {
-
-    // This class has no additional properties
+    /**
+     * @param string|null $description
+     * @param array       $additionalProperties
+     */
+    public function __construct(string $description = null, array $additionalProperties = [])
+    {
+        parent::__construct($additionalProperties);
+        $this->description = $description;
+    }
 }

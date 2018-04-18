@@ -28,6 +28,16 @@ class OauthFlow extends AbstractObject implements ExtensibleInterface
     public $tokenUrl;
 
     /**
+     * REQUIRED. The available scopes for the OAuth2 security scheme. A map between the scope name and a short
+     * description for it.
+     *
+     * Applies To: oauth2
+     *
+     * @var string[] array<string,string>
+     */
+    public $scopes;
+
+    /**
      * The URL to be used for obtaining refresh tokens. This MUST be in the form of a URL.
      *
      * Applies To: oauth2
@@ -37,12 +47,20 @@ class OauthFlow extends AbstractObject implements ExtensibleInterface
     public $refreshUrl;
 
     /**
-     * REQUIRED. The available scopes for the OAuth2 security scheme. A map between the scope name and a short
-     * description for it.
-     *
-     * Applies To: oauth2
-     *
-     * @var string[] array<string,string>
+     * @param string   $authorizationUrl
+     * @param string   $tokenUrl
+     * @param string[] $scopes
+     * @param array    $additionalProperties
      */
-    public $scopes;
+    public function __construct(
+        string $authorizationUrl,
+        string $tokenUrl,
+        array $scopes,
+        array $additionalProperties = []
+    ) {
+        parent::__construct($additionalProperties);
+        $this->authorizationUrl = $authorizationUrl;
+        $this->tokenUrl         = $tokenUrl;
+        $this->scopes           = $scopes;
+    }
 }
