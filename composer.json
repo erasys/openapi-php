@@ -12,7 +12,7 @@
     "illuminate",
     "laravel"
   ],
-  "homepage": "http://gitlab.adam/erasys/openapi-php",
+  "homepage": "http://github.com/erasys/openapi-php",
   "support": {
     "issues": "https://github.com/erasys/openapi-php/issues"
   },
