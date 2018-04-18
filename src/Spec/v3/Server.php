@@ -9,7 +9,6 @@ namespace erasys\OpenApi\Spec\v3;
  */
 class Server extends AbstractObject
 {
-
     /**
      * REQUIRED. A URL to the target host.
      * This URL supports Server Variables and MAY be relative,

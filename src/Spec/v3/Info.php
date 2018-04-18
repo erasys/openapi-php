@@ -67,10 +67,10 @@ class Info extends AbstractObject
         string $description = null,
         string $licenseName = 'Proprietary License'
     ) {
-        $this->title = $title;
-        $this->version = $version;
+        $this->title       = $title;
+        $this->version     = $version;
         $this->description = $description;
-        $this->license = new License(
+        $this->license     = new License(
             [
                 'name' => $licenseName,
             ]

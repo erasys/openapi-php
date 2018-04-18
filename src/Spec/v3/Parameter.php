@@ -33,8 +33,8 @@ namespace erasys\OpenApi\Spec\v3;
 class Parameter extends AbstractParameter
 {
 
-    const IN_PATH = 'path';
-    const IN_QUERY = 'query';
+    const IN_PATH   = 'path';
+    const IN_QUERY  = 'query';
     const IN_HEADER = 'header';
     const IN_COOKIE = 'cookie';
 
