@@ -15,9 +15,8 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#linkObject
  */
-class Link extends AbstractObject
+class Link extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * A relative or absolute reference to an OAS operation. This field is mutually exclusive of the operationId field,
      * and MUST point to an Operation Object. Relative operationRef values MAY be used to locate an existing Operation

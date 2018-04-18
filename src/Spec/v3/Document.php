@@ -7,14 +7,14 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/
  */
-class Document extends AbstractObject
+class Document extends AbstractObject implements ExtensibleInterface
 {
-
     const SCHEME_HTTP                 = 'http';
     const SCHEME_HTTPS                = 'https';
     const SCHEME_WEBSOCKET            = 'ws';
     const SCHEME_SECURE_WEBSOCKET     = 'wss';
     const MIME_TYPE_JSON              = 'application/json';
+    const MIME_TYPE_JSON_SCHEMA       = 'application/schema+json';
     const MIME_TYPE_URLENCODED        = 'application/x-www-form-urlencoded';
     const MIME_TYPE_MULTIPART         = 'multipart/form-data';
     const PARAM_IN_PATH               = 'path';

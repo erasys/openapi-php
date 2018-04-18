@@ -7,9 +7,8 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#encodingObject
  */
-class Encoding extends AbstractObject
+class Encoding extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * The Content-Type for encoding a specific property.
      * Default value depends on the property type: for string with format being

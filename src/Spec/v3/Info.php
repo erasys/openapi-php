@@ -8,9 +8,8 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#infoObject
  */
-class Info extends AbstractObject
+class Info extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * REQUIRED. The title of the application.
      *

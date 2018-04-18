@@ -8,12 +8,10 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#responsesObject
  */
-class Response extends AbstractObject
+class Response extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * REQUIRED. A short description of the response. CommonMark syntax MAY be used for rich text representation.
-     *
      *
      * @var string
      */

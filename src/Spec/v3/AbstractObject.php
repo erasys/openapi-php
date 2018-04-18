@@ -3,6 +3,7 @@
 namespace erasys\OpenApi\Spec\v3;
 
 use ArrayAccess;
+use erasys\OpenApi\ExtensionProperty;
 use erasys\OpenApi\RawValue;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
@@ -117,11 +118,18 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
     private function exportValue($value)
     {
         if ($value instanceof RawValue) {
+            // Unwrap value and return it raw, as it is.
             return $value->value;
         }
 
         if ($value instanceof AbstractObject) {
             return $value->toArray();
+        }
+
+        if ($value instanceof ExtensionProperty) {
+            return [
+                $value->name => $this->exportValue($value->value),
+            ];
         }
 
         if (is_array($value)) {
@@ -131,9 +139,26 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
                 if (is_null($v)) {
                     continue;
                 }
-                // Transform extension property names
-                if (preg_match('/^x[A-Z]/', $k)) {
-                    $k = 'x-' . lcfirst(preg_replace('/^(x)/', '', $k));
+                // Take key and value from extension property definition
+                if ($v instanceof ExtensionProperty) {
+                    $result[$v->name] = $this->exportValue($v->value);
+                    continue;
+                }
+                if (in_array($k, ['xml'])) {
+                    $result[$k] = $this->exportValue($v);
+                    continue;
+                }
+                // Transform extension property names using the 'x-dashes-format'
+                if (preg_match('/^x[_]/', $k)) {
+                    $k          = str_replace('_', '-', $k);
+                    $result[$k] = $this->exportValue($v);
+                    continue;
+                }
+                // Transform extension property names using the 'x-camelCaseFormat'
+                if (preg_match('/^x[A-Za-z]/', $k)) {
+                    $k          = 'x-' . lcfirst(preg_replace('/^(x)/', '', $k));
+                    $result[$k] = $this->exportValue($v);
+                    continue;
                 }
                 // Transform reference property names
                 if ($k === 'ref') {

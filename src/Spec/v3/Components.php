@@ -8,9 +8,8 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#componentsObject
  */
-class Components extends AbstractObject
+class Components extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * A map to hold reusable Schema Objects.
      *

@@ -9,9 +9,8 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#pathItemObject
  */
-class PathItem extends AbstractObject
+class PathItem extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * Allows for an external definition of this path item.
      * The referenced structure MUST be in the format of a Path Item Object.

@@ -11,7 +11,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#xmlObject
  */
-class Xml extends AbstractObject
+class Xml extends AbstractObject implements ExtensibleInterface
 {
     /**
      * Replaces the name of the element/attribute used for the described schema property.

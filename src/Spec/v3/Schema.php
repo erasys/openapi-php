@@ -19,9 +19,8 @@ namespace erasys\OpenApi\Spec\v3;
  * @see https://tools.ietf.org/html/draft-wright-json-schema-00
  * @see https://tools.ietf.org/html/draft-wright-json-schema-validation-00
  */
-class Schema extends AbstractObject
+class Schema extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * @var string
      */

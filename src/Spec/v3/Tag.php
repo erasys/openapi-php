@@ -8,7 +8,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#tagObject
  */
-class Tag extends AbstractObject
+class Tag extends AbstractObject implements ExtensibleInterface
 {
 
     /**

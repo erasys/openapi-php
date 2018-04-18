@@ -7,9 +7,8 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#licenseObject
  */
-class License extends AbstractObject
+class License extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * REQUIRED. The license name used for the API.
      *

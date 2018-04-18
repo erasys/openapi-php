@@ -7,9 +7,8 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#exampleObject
  */
-class Example extends AbstractObject
+class Example extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * Short description for the example.
      *

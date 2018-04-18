@@ -7,9 +7,8 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#contactObject
  */
-class Contact extends AbstractObject
+class Contact extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * The identifying name of the contact person/organization.
      *

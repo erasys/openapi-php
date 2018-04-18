@@ -7,9 +7,8 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#oauthFlowObject
  */
-class OauthFlow
+class OauthFlow extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * REQUIRED. The authorization URL to be used for this flow. This MUST be in the form of a URL.
      *

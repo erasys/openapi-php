@@ -7,9 +7,8 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#oauthFlowsObject
  */
-class OauthFlows
+class OauthFlows extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * Configuration for the OAuth Implicit flow
      *

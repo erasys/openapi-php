@@ -11,9 +11,8 @@ namespace erasys\OpenApi\Spec\v3;
  * @see https://tools.ietf.org/html/rfc6749
  * @see https://tools.ietf.org/html/draft-ietf-oauth-discovery-06
  */
-class SecurityScheme extends AbstractObject
+class SecurityScheme extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * REQUIRED. The type of the security scheme. Valid values are "apiKey", "http", "oauth2", "openIdConnect".
      *

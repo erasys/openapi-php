@@ -7,9 +7,8 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#mediaTypeObject
  */
-class MediaType extends AbstractObject
+class MediaType extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * The schema defining the type used for the request body.
      *

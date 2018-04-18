@@ -7,7 +7,7 @@ namespace erasys\OpenApi\Spec\v3;
  *
  * @see https://swagger.io/specification/#serverObject
  */
-class Server extends AbstractObject
+class Server extends AbstractObject implements ExtensibleInterface
 {
     /**
      * REQUIRED. A URL to the target host.

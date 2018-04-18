@@ -5,9 +5,8 @@ namespace erasys\OpenApi\Spec\v3;
 /**
  * Common class for Parameter Object and Header Object.
  */
-abstract class AbstractParameter extends AbstractObject
+abstract class AbstractParameter extends AbstractObject implements ExtensibleInterface
 {
-
     /**
      * A brief description of the parameter. This could contain examples of use.
      * CommonMark syntax MAY be used for rich text representation.
