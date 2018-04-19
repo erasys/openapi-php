@@ -12,22 +12,38 @@ class ExtensionProperty
      *
      * @var string
      */
-    public $name;
+    private $name;
 
     /**
      * Value of the property
      *
      * @var mixed
      */
-    public $value;
+    private $value;
 
     /**
-     * @param string     $name
+     * @param string     $name Extension property name without the 'x-' prefix.
      * @param mixed|null $value
      */
     public function __construct(string $name, $value = null)
     {
-        $this->name  = $name;
+        $this->name  = 'x-' . $name;
         $this->value = $value;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getValue()
+    {
+        return $this->value;
     }
 }

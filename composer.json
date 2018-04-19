@@ -59,8 +59,8 @@
   },
   "scripts": {
     "test": [
-      "vendor/bin/phpunit",
-      "vendor/bin/phpcs"
+      "vendor/bin/phpcs",
+      "vendor/bin/phpunit"
     ],
     "cs-fix": "vendor/bin/phpcbf"
   }

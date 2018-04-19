@@ -3,12 +3,14 @@
 namespace erasys\OpenApi\Spec\v3;
 
 use ArrayAccess;
+use erasys\OpenApi\Exceptions\ArrayKeyConflictException;
+use erasys\OpenApi\Exceptions\UndefinedPropertyException;
+use erasys\OpenApi\Exceptions\UnsupportedTypeException;
 use erasys\OpenApi\ExtensionProperty;
 use erasys\OpenApi\RawValue;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
 use JsonSerializable;
-use LogicException;
 use stdClass;
 use Symfony\Component\Yaml\Yaml;
 
@@ -37,7 +39,7 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
      */
     final public function __get($name)
     {
-        throw new LogicException($this->getUndefinedErrorMessage("\${$name} property"));
+        throw new UndefinedPropertyException(static::class . "::\${$name}", 1);
     }
 
     /**
@@ -46,16 +48,7 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
      */
     final public function __set($name, $value)
     {
-        throw new LogicException($this->getUndefinedErrorMessage("\${$name} property"));
-    }
-
-    /**
-     * @param string $name
-     * @param array  $arguments
-     */
-    final public function __call($name, $arguments)
-    {
-        throw new LogicException($this->getUndefinedErrorMessage("{$name}() method"));
+        throw new UndefinedPropertyException(static::class . "::\${$name}", 2);
     }
 
     /**
@@ -96,21 +89,6 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
     }
 
     /**
-     * @return array
-     */
-    public function toArray()
-    {
-        $vars = (function ($that) {
-            // Only public variables
-            return get_object_vars($that);
-        })(
-            $this
-        );
-
-        return $this->exportValue($vars);
-    }
-
-    /**
      * @param mixed $value
      *
      * @return array|mixed
@@ -119,7 +97,7 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
     {
         if ($value instanceof RawValue) {
             // Unwrap value and return it raw, as it is.
-            return $value->value;
+            return $value->getValue();
         }
 
         if ($value instanceof AbstractObject) {
@@ -128,52 +106,60 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
 
         if ($value instanceof ExtensionProperty) {
             return [
-                $value->name => $this->exportValue($value->value),
+                $value->getName() => $this->exportValue($value->getValue()),
             ];
         }
 
         if (is_array($value)) {
             $result = [];
             foreach ($value as $k => $v) {
-                // Ignore null properties
-                if (is_null($v)) {
-                    continue;
-                }
                 // Take key and value from extension property definition
                 if ($v instanceof ExtensionProperty) {
-                    $result[$v->name] = $this->exportValue($v->value);
+                    $k = $v->getName();
+                    $v = $this->exportValue($v->getValue());
+                }
+                // Ignore null properties
+                if (is_null($v)) {
                     continue;
                 }
                 if (in_array($k, ['xml'])) {
                     $result[$k] = $this->exportValue($v);
                     continue;
                 }
-                // Transform extension property names using the 'x-dashes-format'
-                if (preg_match('/^x[_]/', $k)) {
-                    $k          = str_replace('_', '-', $k);
-                    $result[$k] = $this->exportValue($v);
-                    continue;
-                }
-                // Transform extension property names using the 'x-camelCaseFormat'
-                if (preg_match('/^x[A-Za-z]/', $k)) {
-                    $k          = 'x-' . lcfirst(preg_replace('/^(x)/', '', $k));
-                    $result[$k] = $this->exportValue($v);
-                    continue;
+                // Transform extension property names using the 'x-respecT_caseFormat'
+                if (preg_match('/^x/i', $k)) {
+                    $k = 'x-' . preg_replace('/^(x[-]?)/i', '', str_replace('_', '-', $k));
                 }
                 // Transform reference property names
                 if ($k === 'ref') {
                     $k = '$ref';
+                }
+                if (isset($result[$k])) {
+                    throw new ArrayKeyConflictException($k);
                 }
                 $result[$k] = $this->exportValue($v);
             }
             return $result;
         }
 
-        if (!is_scalar($value)) {
-            throw new LogicException('Unsupported type: ' . gettype($value));
+        if (!is_null($value) && !is_scalar($value)) {
+            throw new UnsupportedTypeException(is_object($value) ? get_class($value) : gettype($value));
         }
 
         return $value;
+    }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        $vars = (function ($that) {
+            // Only public variables
+            return get_object_vars($that);
+        })->bindTo(null, null)($this);
+
+        return $this->exportValue($vars);
     }
 
     /**
@@ -206,26 +192,21 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
         int $inline = 10,
         int $indentation = 2,
         int $flags = 0
-    ) {
+    ): string {
         return Yaml::dump($this->toArray(), $inline, $indentation, $flags);
     }
 
     /**
-     * @return array
+     * Returns a value that is suitable for JSON serialization,
+     * in order to be able to export empty objects correctly, so they
+     * won't be treated as empty arrays.
+     *
+     * @return array|stdClass
      */
     public function jsonSerialize()
     {
-        return $this->toArray();
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return string
-     */
-    private function getUndefinedErrorMessage(string $name): string
-    {
-        return static::class . "::{$name} is not defined. Dynamic access is disabled for DTOs.";
+        $properties = $this->toArray();
+        return empty($properties) ? new stdClass() : $properties;
     }
 
     public function __toString()

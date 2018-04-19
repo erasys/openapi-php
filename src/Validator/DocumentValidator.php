@@ -23,7 +23,7 @@ class DocumentValidator
     protected $defaultJsonSchemaFile = '/../Spec/v3/schemas/v3.0.x.yml';
 
     /**
-     * @param string $jsonSchema JSON Schema of the Open API specification, in JSON format. If omitted, the bundled
+     * @param string $jsonSchema JSON Schema of the Open API specification, in YAML format. If omitted, the bundled
      * Open API 3.0.x JSON Schema file will be used.
      */
     public function __construct(string $jsonSchema = null)
@@ -33,10 +33,10 @@ class DocumentValidator
             if (!file_exists($schemaFile)) {
                 throw new \LogicException("The default schema file cannot be found: ${schemaFile}");
             }
-            $this->jsonSchema = Yaml::parse(file_get_contents($schemaFile), Yaml::PARSE_OBJECT);
-        } else {
-            $this->jsonSchema = json_decode($jsonSchema);
+            $jsonSchema = file_get_contents($schemaFile);
         }
+
+        $this->jsonSchema = Yaml::parse($jsonSchema, Yaml::PARSE_OBJECT);
     }
 
     /**
@@ -48,7 +48,7 @@ class DocumentValidator
         $documentObject = $document->toObject();
         $validator      = new JsonSchema\Validator();
         $validator->validate($documentObject, $this->jsonSchema);
-        return new ValidationResult($validator->isValid(), $validator->getErrors());
+        return new ValidationResult($validator->getErrors());
     }
 
     public function getJsonSchema(): stdClass

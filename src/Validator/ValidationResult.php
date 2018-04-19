@@ -5,24 +5,18 @@ namespace erasys\OpenApi\Validator;
 class ValidationResult
 {
     /**
-     * @var bool
-     */
-    private $valid;
-
-    /**
      * @var array
      */
     private $errors;
 
-    public function __construct(bool $valid, array $errors)
+    public function __construct(array $errors)
     {
-        $this->valid  = $valid;
         $this->errors = $errors;
     }
 
     public function isValid(): bool
     {
-        return $this->valid;
+        return !$this->hasErrors();
     }
 
     public function getErrors(): array
