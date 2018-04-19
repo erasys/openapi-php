@@ -3,6 +3,8 @@
 [![Latest Version on Packagist][ico-version]][link-releases]
 [![Software License][ico-license]](LICENSE)
 [![Build Status][ico-travis]][link-travis]
+[![Coverage Status][ico-coverage]][link-coverage]
+[![Quality Score][ico-scrutinizer]][link-scrutinizer]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 Open API 3.0 builder and validation library for PHP that helps you write valid specs.
@@ -98,7 +100,10 @@ Please see [License File](https://github.com/erasys/openapi-php/blob/master/LICE
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/erasys/openapi-php/master.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/erasys/openapi-php.svg?style=flat-square
-
+[ico-coverage]: https://img.shields.io/scrutinizer/coverage/g/erasys/openapi-php.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/g/erasys/openapi-php.svg?style=flat-square
 [link-releases]: https://packagist.org/packages/erasys/openapi-php
 [link-travis]: https://travis-ci.org/erasys/openapi-php
 [link-downloads]: https://packagist.org/packages/erasys/openapi-php
+[link-coverage]: https://scrutinizer-ci.com/g/erasys/openapi-php/code-structure
+[link-scrutinizer]: https://scrutinizer-ci.com/g/erasys/openapi-php
