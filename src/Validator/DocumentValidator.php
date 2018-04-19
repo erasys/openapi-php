@@ -48,7 +48,7 @@ class DocumentValidator
         $documentObject = $document->toObject();
         $validator      = new JsonSchema\Validator();
         $validator->validate($documentObject, $this->jsonSchema);
-        return new ValidationResult($validator->isValid(), $validator->getErrors());
+        return new ValidationResult($validator->getErrors());
     }
 
     public function getJsonSchema(): stdClass
