@@ -10,11 +10,10 @@ namespace erasys\OpenApi;
  */
 class RawValue
 {
-
     /**
      * @var mixed
      */
-    public $value;
+    private $value;
 
     /**
      * @param mixed $value
@@ -22,5 +21,13 @@ class RawValue
     public function __construct($value)
     {
         $this->value = $value;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getValue()
+    {
+        return $this->value;
     }
 }
