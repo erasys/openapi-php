@@ -6,7 +6,7 @@ use erasys\OpenApi\Spec\v3 as OASv3;
 use erasys\OpenApi\Validator\DocumentValidator;
 use PHPUnit\Framework\TestCase;
 
-class GeneralSystemTest extends TestCase
+class ValidatorSystemTest extends TestCase
 {
     /**
      * @var DocumentValidator
