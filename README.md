@@ -70,6 +70,7 @@ $doc = new OASv3\Document(
 $yaml = $doc->toYaml();
 $json = $doc->toJson();
 $arr  = $doc->toArray();
+$obj  = $doc->toObject();
 
 ```
 
