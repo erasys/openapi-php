@@ -9,10 +9,7 @@ class UnsupportedTypeException extends UnexpectedValueException implements OpenA
 {
     public function __construct(string $type, int $code = 0, Throwable $previous = null)
     {
-        parent::__construct(
-            sprintf("Unsupported type: %s.", $type),
-            $code,
-            $previous
-        );
+        $message = 'Unsupported type: %s.';
+        parent::__construct(sprintf($message, $type), $code, $previous);
     }
 }

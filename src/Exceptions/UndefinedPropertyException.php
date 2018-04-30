@@ -9,10 +9,7 @@ class UndefinedPropertyException extends LogicException implements OpenApiExcept
 {
     public function __construct(string $property, int $code = 0, Throwable $previous = null)
     {
-        parent::__construct(
-            sprintf("The %s property is not defined. Dynamic access is disabled for Open API objects.", $property),
-            $code,
-            $previous
-        );
+        $message = 'The %s property is not defined. Dynamic access is disabled for Open API objects.';
+        parent::__construct(sprintf($message, $property), $code, $previous);
     }
 }
