@@ -209,12 +209,12 @@ class AbstractObjectUnitTest extends TestCase
         };
 
         $expected = [
-            'foo' => 'a',
-            'x-bar-baz' => 'b',
-            'x-BarBazFoo' => 'c',
+            'foo'              => 'a',
+            'x-bar-baz'        => 'b',
+            'x-BarBazFoo'      => 'c',
             'x-BarBaz-foo-Bar' => 'd',
-            'x-Bar-baz' => 'e',
-            'x-bar-baz-foo' => 'f',
+            'x-Bar-baz'        => 'e',
+            'x-bar-baz-foo'    => 'f',
         ];
         $actual   = $obj->toArray();
 

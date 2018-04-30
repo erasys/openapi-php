@@ -25,23 +25,23 @@ class DocumentUnitTest extends TestCase
 
     public function testConstructorAllAssignments()
     {
-        $info    = new Info('Foo Bar', 'v1');
-        $paths   = [];
-        $openapi = '3.0.3';
-        $other   = [
+        $info       = new Info('Foo Bar', 'v1');
+        $paths      = [];
+        $openapi    = '3.0.3';
+        $additional = [
             'openapi' => '3.0.0',
-            'paths' => [null],
-            'tags' => [
+            'paths'   => [null],
+            'tags'    => [
                 new Tag('Foo'),
             ],
         ];
 
-        $obj = new Document($info, $paths, $openapi, $other);
+        $obj = new Document($info, $paths, $openapi, $additional);
 
         $this->assertInstanceOf(ExtensibleInterface::class, $obj);
         $this->assertSame($info, $obj->info);
         $this->assertSame($paths, $obj->paths);
         $this->assertEquals($openapi, $obj->openapi);
-        $this->assertSame($other['tags'], $obj->tags);
+        $this->assertSame($additional['tags'], $obj->tags);
     }
 }

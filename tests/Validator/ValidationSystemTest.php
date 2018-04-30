@@ -51,7 +51,7 @@ class ValidationSystemTest extends TestCase
                     [
                         'get' => new OASv3\Operation(
                             [
-                                '200' => new OASv3\Response('Successful response.'),
+                                '200'     => new OASv3\Response('Successful response.'),
                                 'default' => new OASv3\Response('Default error response.'),
                             ]
                         ),
