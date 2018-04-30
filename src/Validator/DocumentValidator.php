@@ -36,7 +36,7 @@ class DocumentValidator
             $jsonSchema = file_get_contents($schemaFile);
         }
 
-        $this->jsonSchema = Yaml::parse($jsonSchema, Yaml::PARSE_OBJECT);
+        $this->jsonSchema = Yaml::parse($jsonSchema, Yaml::PARSE_OBJECT_FOR_MAP);
     }
 
     /**

@@ -4,7 +4,9 @@ namespace erasys\OpenApi\Tests;
 
 use erasys\OpenApi\Spec\v3 as OASv3;
 use erasys\OpenApi\Validator\DocumentValidator;
+use LogicException;
 use PHPUnit\Framework\TestCase;
+use stdClass;
 
 class ValidatorSystemTest extends TestCase
 {
@@ -18,6 +20,26 @@ class ValidatorSystemTest extends TestCase
         if (!$this->defaultValidator) {
             $this->defaultValidator = new DocumentValidator();
         }
+    }
+
+    public function testNonExistingSpecFileCausesLogicException()
+    {
+        $this->expectException(LogicException::class);
+        $this->expectExceptionMessageRegExp('/The default schema file cannot be found/i');
+
+        new class extends DocumentValidator
+        {
+            protected $defaultJsonSchemaFile = '/../Spec/v3/schemas/vFooBar.yml';
+        };
+    }
+
+    public function testJsonSchemaReturnsExpectedObject()
+    {
+        $schema = $this->defaultValidator->getJsonSchema();
+        $this->assertInstanceOf(stdClass::class, $schema);
+        $this->assertObjectHasAttribute('type', $schema);
+        $this->assertEquals('object', $schema->type);
+        $this->assertObjectHasAttribute('properties', $schema);
     }
 
     public function testValidateSimpleDocumentValid()
