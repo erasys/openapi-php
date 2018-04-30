@@ -1,6 +1,6 @@
 <?php
 
-namespace erasys\OpenApi\Tests;
+namespace erasys\OpenApi\Tests\Spec;
 
 use erasys\OpenApi\Exceptions\ArrayKeyConflictException;
 use erasys\OpenApi\Exceptions\UndefinedPropertyException;

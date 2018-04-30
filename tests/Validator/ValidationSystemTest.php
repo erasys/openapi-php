@@ -1,6 +1,6 @@
 <?php
 
-namespace erasys\OpenApi\Tests;
+namespace erasys\OpenApi\Tests\Validator;
 
 use erasys\OpenApi\Spec\v3 as OASv3;
 use erasys\OpenApi\Validator\DocumentValidator;
@@ -8,7 +8,7 @@ use LogicException;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 
-class ValidatorSystemTest extends TestCase
+class ValidationSystemTest extends TestCase
 {
     /**
      * @var DocumentValidator
