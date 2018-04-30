@@ -3,6 +3,7 @@
 namespace erasys\OpenApi\Tests\Spec;
 
 use erasys\OpenApi\Spec\v3\Document;
+use erasys\OpenApi\Spec\v3\ExtensibleInterface;
 use erasys\OpenApi\Spec\v3\Info;
 use erasys\OpenApi\Spec\v3\Tag;
 use PHPUnit\Framework\TestCase;
@@ -16,6 +17,7 @@ class DocumentUnitTest extends TestCase
 
         $obj = new Document($info, $paths);
 
+        $this->assertInstanceOf(ExtensibleInterface::class, $obj);
         $this->assertSame($info, $obj->info);
         $this->assertSame($paths, $obj->paths);
         $this->assertEquals(Document::DEFAULT_OPENAPI_VERSION, $obj->openapi);
@@ -36,6 +38,7 @@ class DocumentUnitTest extends TestCase
 
         $obj = new Document($info, $paths, $openapi, $other);
 
+        $this->assertInstanceOf(ExtensibleInterface::class, $obj);
         $this->assertSame($info, $obj->info);
         $this->assertSame($paths, $obj->paths);
         $this->assertEquals($openapi, $obj->openapi);

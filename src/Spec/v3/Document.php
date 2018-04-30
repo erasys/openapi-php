@@ -147,27 +147,4 @@ class Document extends AbstractObject implements ExtensibleInterface
         $this->paths   = $paths;
         $this->openapi = $openapi;
     }
-
-    /**
-     * @param Tag $tag
-     *
-     * @return $this
-     */
-    public function addTag(Tag $tag): Document
-    {
-        $this->tags[] = $tag;
-        return $this;
-    }
-
-    /**
-     * @param string $securitySchemeName
-     * @param array  $scopes
-     *
-     * @return $this
-     */
-    public function addSecurityRequirement(string $securitySchemeName, $scopes = []): Document
-    {
-        $this->security[] = [$securitySchemeName => $scopes];
-        return $this;
-    }
 }
