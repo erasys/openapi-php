@@ -9,6 +9,7 @@ namespace erasys\OpenApi\Spec\v3;
  */
 class Document extends AbstractObject implements ExtensibleInterface
 {
+    const DEFAULT_OPENAPI_VERSION     = '3.0.1';
     const SCHEME_HTTP                 = 'http';
     const SCHEME_HTTPS                = 'https';
     const SCHEME_WEBSOCKET            = 'ws';
@@ -55,7 +56,7 @@ class Document extends AbstractObject implements ExtensibleInterface
      *
      * @var string
      */
-    public $openapi = '3.0.1';
+    public $openapi = self::DEFAULT_OPENAPI_VERSION;
 
     /**
      * REQUIRED. Provides metadata about the API. The metadata MAY be used by tooling as required.
@@ -140,11 +141,11 @@ class Document extends AbstractObject implements ExtensibleInterface
      */
     public function __construct(Info $info, array $paths, string $openapi = '3.0.1', array $additionalProperties = [])
     {
+        parent::__construct($additionalProperties);
+
         $this->info    = $info;
         $this->paths   = $paths;
         $this->openapi = $openapi;
-
-        parent::__construct($additionalProperties);
     }
 
     /**
