@@ -27,7 +27,7 @@
   "require": {
     "php": "^7.2",
     "illuminate/contracts": "^6.0",
-    "symfony/yaml": "^4.1",
+    "symfony/yaml": "^4.1 || ^5.0",
     "justinrainbow/json-schema": "^5.2"
   },
   "require-dev": {
