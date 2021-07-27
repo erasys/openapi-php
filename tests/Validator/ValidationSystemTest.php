@@ -15,7 +15,7 @@ class ValidationSystemTest extends TestCase
      */
     private $defaultValidator;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         if (!$this->defaultValidator) {
             $this->defaultValidator = new DocumentValidator();
@@ -24,7 +24,11 @@ class ValidationSystemTest extends TestCase
 
     public function testNonExistingSpecFileCausesLogicException()
     {
-        $this->expectException(LogicException::class);
+        if (preg_match('/^8\./', (string) phpversion())) {
+            $this->expectError();
+        } else {
+            $this->expectException(LogicException::class);
+        }
         $this->expectExceptionMessageRegExp('/The default schema file cannot be found/i');
 
         new class extends DocumentValidator
