@@ -15,7 +15,7 @@ class ValidationSystemTest extends TestCase
      */
     private $defaultValidator;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         if (!$this->defaultValidator) {
             $this->defaultValidator = new DocumentValidator();
@@ -25,10 +25,9 @@ class ValidationSystemTest extends TestCase
     public function testNonExistingSpecFileCausesLogicException()
     {
         $this->expectException(LogicException::class);
-        $this->expectExceptionMessageRegExp('/The default schema file cannot be found/i');
+        $this->expectExceptionMessageMatches('/The default schema file cannot be found/i');
 
-        new class extends DocumentValidator
-        {
+        new class extends DocumentValidator {
             protected $defaultJsonSchemaFile = '/../Spec/v3/schemas/vFooBar.yml';
         };
     }
