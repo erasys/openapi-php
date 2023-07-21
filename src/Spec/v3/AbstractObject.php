@@ -56,7 +56,7 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
      *
      * @return bool
      */
-    final public function offsetExists($offset)
+    final public function offsetExists($offset): bool
     {
         return isset($this->$offset);
     }
@@ -66,7 +66,7 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
      *
      * @return mixed
      */
-    final public function offsetGet($offset)
+    final public function offsetGet($offset): mixed
     {
         return $this->$offset;
     }
@@ -75,7 +75,7 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
      * @param string $offset
      * @param mixed  $value
      */
-    final public function offsetSet($offset, $value)
+    final public function offsetSet($offset, $value): void
     {
         $this->$offset = $value;
     }
@@ -83,7 +83,7 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
     /**
      * @param string $offset
      */
-    final public function offsetUnset($offset)
+    final public function offsetUnset($offset): void
     {
         unset($this->$offset);
     }
@@ -203,7 +203,7 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
      *
      * @return array|stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         $properties = $this->toArray();
         return empty($properties) ? new stdClass() : $properties;
