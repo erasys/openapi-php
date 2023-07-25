@@ -52,38 +52,38 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
     }
 
     /**
-     * @param string $offset
+     * @param mixed $offset
      *
      * @return bool
      */
-    final public function offsetExists($offset): bool
+    final public function offsetExists(mixed $offset): bool
     {
         return isset($this->$offset);
     }
 
     /**
-     * @param string $offset
+     * @param mixed $offset
      *
      * @return mixed
      */
-    final public function offsetGet($offset): mixed
+    final public function offsetGet(mixed $offset): mixed
     {
         return $this->$offset;
     }
 
     /**
-     * @param string $offset
+     * @param mixed $offset
      * @param mixed  $value
      */
-    final public function offsetSet($offset, $value): void
+    final public function offsetSet(mixed $offset, mixed $value): void
     {
         $this->$offset = $value;
     }
 
     /**
-     * @param string $offset
+     * @param mixed $offset
      */
-    final public function offsetUnset($offset): void
+    final public function offsetUnset(mixed $offset): void
     {
         unset($this->$offset);
     }
