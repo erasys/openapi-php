@@ -53,7 +53,6 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
 
     /**
      * @param mixed $offset
-     *
      * @return bool
      */
     final public function offsetExists(mixed $offset): bool
@@ -63,7 +62,6 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
 
     /**
      * @param mixed $offset
-     *
      * @return mixed
      */
     final public function offsetGet(mixed $offset): mixed
@@ -73,7 +71,8 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
 
     /**
      * @param mixed $offset
-     * @param mixed  $value
+     * @param mixed $value
+     * @return void
      */
     final public function offsetSet(mixed $offset, mixed $value): void
     {
@@ -82,6 +81,7 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
 
     /**
      * @param mixed $offset
+     * @return void
      */
     final public function offsetUnset(mixed $offset): void
     {
@@ -201,7 +201,7 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
      * in order to be able to export empty objects correctly, so they
      * won't be treated as empty arrays.
      *
-     * @return array|stdClass
+     * @return mixed
      */
     public function jsonSerialize(): mixed
     {
