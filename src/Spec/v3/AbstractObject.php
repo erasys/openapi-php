@@ -52,38 +52,38 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
     }
 
     /**
-     * @param string $offset
-     *
+     * @param mixed $offset
      * @return bool
      */
-    final public function offsetExists($offset)
+    final public function offsetExists(mixed $offset): bool
     {
         return isset($this->$offset);
     }
 
     /**
-     * @param string $offset
-     *
+     * @param mixed $offset
      * @return mixed
      */
-    final public function offsetGet($offset)
+    final public function offsetGet(mixed $offset): mixed
     {
         return $this->$offset;
     }
 
     /**
-     * @param string $offset
-     * @param mixed  $value
+     * @param mixed $offset
+     * @param mixed $value
+     * @return void
      */
-    final public function offsetSet($offset, $value)
+    final public function offsetSet(mixed $offset, mixed $value): void
     {
         $this->$offset = $value;
     }
 
     /**
-     * @param string $offset
+     * @param mixed $offset
+     * @return void
      */
-    final public function offsetUnset($offset)
+    final public function offsetUnset(mixed $offset): void
     {
         unset($this->$offset);
     }
@@ -201,9 +201,9 @@ abstract class AbstractObject implements ArrayAccess, Arrayable, Jsonable, JsonS
      * in order to be able to export empty objects correctly, so they
      * won't be treated as empty arrays.
      *
-     * @return array|stdClass
+     * @return mixed
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         $properties = $this->toArray();
         return empty($properties) ? new stdClass() : $properties;
