@@ -31,7 +31,7 @@ class DocumentValidator
         if (is_null($jsonSchema)) {
             $schemaFile = realpath(__DIR__ . $this->defaultJsonSchemaFile);
             if (!file_exists($schemaFile)) {
-                throw new \LogicException("The default schema file cannot be found: ${schemaFile}");
+                throw new \LogicException("The default schema file cannot be found: {$schemaFile}");
             }
             $jsonSchema = file_get_contents($schemaFile);
         }
